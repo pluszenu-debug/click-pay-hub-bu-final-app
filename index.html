@@ -126,7 +126,7 @@
 
         header {
             background: var(--glass-bg);
-            padding: 14px 20px;
+            padding: 16px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -471,7 +471,6 @@
             font-weight: 700;
         }
 
-        /* Receipt Modal Styles */
         #receipt-modal {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
@@ -525,11 +524,11 @@
             <div style="font-size: 9px; color: var(--text-muted); margin-bottom: 16px; text-transform: uppercase;">ClickPay Pro Verification System</div>
             
             <div style="background: rgba(0,0,0,0.5); border: 1px solid var(--border); border-radius: 14px; padding: 16px; text-align: left; display: flex; flex-direction: column; gap: 8px; font-size: 11px; margin-bottom: 20px;">
-                <div style="display:justify; display:flex; justify-content:space-between;"><span style="color:var(--text-muted);">Campaign/Job:</span> <span id="receiptTitle" style="font-weight:bold; color:#fff; text-align:right; max-width:60%;">--</span></div>
-                <div style="display:justify; display:flex; justify-content:space-between;"><span style="color:var(--text-muted);">Category:</span> <span id="receiptCategory" style="font-weight:bold; color:var(--primary);">--</span></div>
-                <div style="display:justify; display:flex; justify-content:space-between;"><span style="color:var(--text-muted);">Total Cost:</span> <span id="receiptCost" style="font-weight:bold; color:#6ee7b7;">--</span></div>
-                <div style="display:justify; display:flex; justify-content:space-between;"><span style="color:var(--text-muted);">TRX Reference:</span> <span id="receiptTrx" style="font-weight:bold; color:#fff;">--</span></div>
-                <div style="display:justify; display:flex; justify-content:space-between;"><span style="color:var(--text-muted);">Date & Time:</span> <span id="receiptDate" style="font-weight:bold; color:#fff;">--</span></div>
+                <div style="display:flex; justify-content:space-between;"><span style="color:var(--text-muted);">Campaign/Job:</span> <span id="receiptTitle" style="font-weight:bold; color:#fff; text-align:right; max-width:60%;">--</span></div>
+                <div style="display:flex; justify-content:space-between;"><span style="color:var(--text-muted);">Category:</span> <span id="receiptCategory" style="font-weight:bold; color:var(--primary);">--</span></div>
+                <div style="display:flex; justify-content:space-between;"><span style="color:var(--text-muted);">Total Cost:</span> <span id="receiptCost" style="font-weight:bold; color:#6ee7b7;">--</span></div>
+                <div style="display:flex; justify-content:space-between;"><span style="color:var(--text-muted);">TRX Reference:</span> <span id="receiptTrx" style="font-weight:bold; color:#fff;">--</span></div>
+                <div style="display:flex; justify-content:space-between;"><span style="color:var(--text-muted);">Date & Time:</span> <span id="receiptDate" style="font-weight:bold; color:#fff;">--</span></div>
             </div>
 
             <div style="background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; color: #6ee7b7; padding: 10px; border-radius: 10px; font-size: 11px; font-weight: 900; margin-bottom: 16px;">
@@ -544,9 +543,6 @@
             👑 CLICKPAY BUSINESS PARTNER
             <span class="sub-brand">Launched by ClickPay Digital</span>
         </h1>
-        <div style="display:flex; gap:10px; align-items:center;">
-            <a href="https://t.me/ZEROPLUSFOR" target="_blank" style="font-size:10px; background:var(--gradient-main); color:#fff; padding:7px 14px; border-radius:9px; font-weight:800; text-decoration:none; box-shadow: 0 4px 15px var(--glow);">💬 Support</a>
-        </div>
     </header>
 
     <div id="appToast" class="toast">Message</div>
@@ -569,7 +565,7 @@
                 </div>
                 
                 <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
-                    <a href="https://t.me/Click_Pay_Pro" target="_blank" class="action-btn secondary" onclick="markJoined()">📢 Join Official Business Channel</a>
+                    <a href="https://t.me/Click_Pay_Pro" target="_blank" class="action-btn secondary" onclick="markJoined()">📢 Official Channel (Join)</a>
                     <button class="action-btn" style="width:100%; padding:15px;" onclick="proceedAfterGateway()">✅ Proceed to Business Registration</button>
                 </div>
                 <div id="gateAlert" class="inline-alert">⚠️ Please join the official Business Channel first!</div>
@@ -654,13 +650,19 @@
                 <div class="ticker-watermark">⚡ ClickPay Boost</div>
             </div>
 
-            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin: 16px 0; background: rgba(0,0,0,0.4); border-radius: 16px; padding: 6px; border: 1px solid var(--border);">
-              <button onclick="switchBizTab('tasks')" id="biz-tasks-tab-btn" style="padding: 10px 4px; border: none; background: var(--primary); color: #fff; border-radius: 12px; font-weight: 900; font-size: 11px; cursor: pointer; transition: all 0.2s;">📋 Tasks</button>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 16px 0; background: rgba(0,0,0,0.4); border-radius: 16px; padding: 6px; border: 1px solid var(--border);">
+              <button onclick="switchBizTab('dailyads')" id="biz-dailyads-tab-btn" style="padding: 10px 4px; border: none; background: var(--primary); color: #fff; border-radius: 12px; font-weight: 900; font-size: 11px; cursor: pointer; transition: all 0.2s;">📢 Daily Ads</button>
+              <button onclick="switchBizTab('tasks')" id="biz-tasks-tab-btn" style="padding: 10px 4px; border: none; background: transparent; color: var(--text-light); border-radius: 12px; font-weight: 900; font-size: 11px; cursor: pointer; transition: all 0.2s;">📋 Tasks</button>
               <button onclick="switchBizTab('promos')" id="biz-promos-tab-btn" style="padding: 10px 4px; border: none; background: transparent; color: var(--text-light); border-radius: 12px; font-weight: 900; font-size: 11px; cursor: pointer; transition: all 0.2s;">🌟 Promos</button>
               <button onclick="switchBizTab('employees')" id="biz-employees-tab-btn" style="padding: 10px 4px; border: none; background: transparent; color: var(--text-light); border-radius: 12px; font-weight: 900; font-size: 11px; cursor: pointer; transition: all 0.2s;">👨‍💼 Talents</button>
             </div>
 
-            <div id="biz-tasks-wrap">
+            <div id="biz-dailyads-wrap">
+                <div class="section-title"><span>📢 Daily Ads & Information Board</span></div>
+                <div id="business-dailyads-container">Loading daily ads data...</div>
+            </div>
+
+            <div id="biz-tasks-wrap" style="display: none;">
                 <div class="section-title"><span>📋 Active Ecosystem Tasks</span></div>
                 <div id="business-tasks-container">Loading network tasks...</div>
             </div>
@@ -688,7 +690,7 @@
                     <div style="font-size: 16px; font-weight: 900; color: #fff;" id="profBizName">--</div>
                     <div style="font-size: 11px; color: var(--primary); font-weight: 800; margin-top: 4px;">Verified Enterprise Partner</div>
                 </div>
-                <div style="display: flex; flex-direction: column; gap: 12px; font-size: 12px;">
+                <div style="display: flex; flex-direction: column; gap: 12px; font-size: 12px; margin-bottom: 20px;">
                     <div style="display: flex; justify-content: space-between; background: rgba(0,0,0,0.4); padding: 12px; border-radius: 10px; border: 1px solid var(--border);">
                         <span style="color: var(--text-muted);">Full Name:</span>
                         <span style="font-weight: bold; color: #fff;" id="profFullName">--</span>
@@ -708,6 +710,14 @@
                     <div style="display: flex; justify-content: space-between; background: rgba(0,0,0,0.4); padding: 12px; border-radius: 10px; border: 1px solid var(--border);">
                         <span style="color: var(--text-muted);">Telegram Username:</span>
                         <span style="font-weight: bold; color: #fff;" id="profTg">--</span>
+                    </div>
+                </div>
+
+                <div style="border-top: 1px solid var(--border); padding-top: 16px; display: flex; flex-direction: column; gap: 10px;">
+                    <div style="font-size: 11px; font-weight: 900; color: var(--primary); text-transform: uppercase; margin-bottom: 4px; text-align: center;">Official Channels & Support</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <a href="https://t.me/Click_Pay_Pro" target="_blank" class="action-btn" style="text-align: center; text-decoration: none; padding: 12px; font-size: 11px;">📢 Official Channel</a>
+                        <a href="https://t.me/ZEROPLUSFOR" target="_blank" class="action-btn secondary" style="text-align: center; text-decoration: none; padding: 12px; font-size: 11px;">💬 Support</a>
                     </div>
                 </div>
             </div>
@@ -991,10 +1001,12 @@
         const PROMOTION_SHEET_URL = "https://docs.google.com/spreadsheets/d/1BZ4K_8kbMDp9_F_8W-j4AsDZsYKTIEODIn1lcxovBTc/export?format=csv&gid=0";
         const NOTICE_SHEET_URL = "https://docs.google.com/spreadsheets/d/1BZ4K_8kbMDp9_F_8W-j4AsDZsYKTIEODIn1lcxovBTc/export?format=csv&gid=2099439673";
         const EMPLOYEE_SHEET_URL = "https://docs.google.com/spreadsheets/d/1BZ4K_8kbMDp9_F_8W-j4AsDZsYKTIEODIn1lcxovBTc/export?format=csv&gid=1059161044";
+        const DAILY_ADS_SHEET_URL = "https://docs.google.com/spreadsheets/d/1BZ4K_8kbMDp9_F_8W-j4AsDZsYKTIEODIn1lcxovBTc/export?format=csv&gid=723212804";
 
         let cachedTasksData = [];
         let cachedPromosData = [];
         let cachedEmployeesData = [];
+        let cachedDailyAdsData = [];
 
         const boostNetworks = [
             { name: "Telegram", badge: "Telegram Network", icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="#229ED9"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.02-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.25.38-.51 1.08-.78 4.22-1.84 7.04-3.05 8.46-3.64 4.02-1.68 4.85-1.97 5.39-1.98.12 0 .39.03.56.17.14.12.18.28.2.45-.02.07-.02.13-.04.23z"/></svg>' },
@@ -1244,24 +1256,38 @@
                     updateDashboardMetrics();
                 }
             });
+
+            loadGoogleSheetCSV(DAILY_ADS_SHEET_URL, (data) => {
+                if(data) {
+                    cachedDailyAdsData = data;
+                    renderDailyAdsUI();
+                }
+            });
         }
 
         function switchBizTab(tab) {
+            let dWrap = document.getElementById('biz-dailyads-wrap');
             let tWrap = document.getElementById('biz-tasks-wrap');
             let pWrap = document.getElementById('biz-promos-wrap');
             let eWrap = document.getElementById('biz-employees-wrap');
+            let dBtn = document.getElementById('biz-dailyads-tab-btn');
             let tBtn = document.getElementById('biz-tasks-tab-btn');
             let pBtn = document.getElementById('biz-promos-tab-btn');
             let eBtn = document.getElementById('biz-employees-tab-btn');
 
+            dWrap.style.display = 'none';
             tWrap.style.display = 'none';
             pWrap.style.display = 'none';
             eWrap.style.display = 'none';
+            dBtn.style.background = 'transparent'; dBtn.style.color = 'var(--text-light)';
             tBtn.style.background = 'transparent'; tBtn.style.color = 'var(--text-light)';
             pBtn.style.background = 'transparent'; pBtn.style.color = 'var(--text-light)';
             eBtn.style.background = 'transparent'; eBtn.style.color = 'var(--text-light)';
 
-            if(tab === 'tasks') {
+            if(tab === 'dailyads') {
+                dWrap.style.display = 'block';
+                dBtn.style.background = 'var(--primary)'; dBtn.style.color = '#fff';
+            } else if(tab === 'tasks') {
                 tWrap.style.display = 'block';
                 tBtn.style.background = 'var(--primary)'; tBtn.style.color = '#fff';
             } else if(tab === 'promos') {
@@ -1271,6 +1297,42 @@
                 eWrap.style.display = 'block';
                 eBtn.style.background = 'var(--primary)'; eBtn.style.color = '#fff';
             }
+        }
+
+        function renderDailyAdsUI() {
+            let el = document.getElementById('business-dailyads-container');
+            if(!el) return;
+            el.innerHTML = '';
+            let reversed = [...cachedDailyAdsData].reverse();
+            if (reversed.length === 0) {
+                el.innerHTML = `<div class="card" style="text-align:center; color:var(--text-muted); font-size:12px; padding:20px;">No daily ads available at the moment.</div>`;
+                return;
+            }
+            reversed.forEach((item) => {
+                let title = item.title || item.name || "Daily Information & Ad";
+                let desc = item.description || item.desc || item.details || "";
+                let link = item.link || item.url || item.website || "";
+                
+                let linkHtml = '';
+                if (link && link.trim() !== '' && link !== '#') {
+                    linkHtml = `<a href="${link}" target="_blank" class="action-btn" style="display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; width: 100%; padding: 12px; font-size: 12px; background: var(--gradient-main);"><span>🔗 More Info</span></a>`;
+                } else {
+                    linkHtml = `<button type="button" class="action-btn secondary" style="display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 12px; font-size: 12px; opacity: 0.6; cursor: not-allowed;" onclick="event.preventDefault();"><span>🔗 More Info (Unavailable)</span></button>`;
+                }
+
+                el.innerHTML += `
+                    <div class="card" style="background: linear-gradient(135deg, rgba(18,18,21,0.95), rgba(24,24,27,0.95)); border: 1px solid var(--border);">
+                        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+                            <span style="font-size: 10px; background: rgba(245, 158, 11, 0.15); color: var(--primary); padding: 4px 10px; border-radius: 8px; font-weight: 900; letter-spacing: 0.5px;">📢 DAILY ANNOUNCEMENT</span>
+                        </div>
+                        <h4 style="color: #fff; margin-bottom: 8px; font-size: 14px; font-weight: 900; line-height: 1.4;">${title}</h4>
+                        <div style="background: rgba(0,0,0,0.4); border: 1px solid var(--border); border-radius: 12px; padding: 14px; margin-bottom: 14px;">
+                            <p style="color: #e2e8f0; font-size: 12px; line-height: 1.7; font-weight: 500; white-space: pre-wrap; word-break: break-word;">${desc}</p>
+                        </div>
+                        ${linkHtml}
+                    </div>
+                `;
+            });
         }
 
         function renderTasksUI() {
@@ -1298,169 +1360,158 @@
             if(!el) return;
             el.innerHTML = '';
             let reversed = [...cachedPromosData].reverse();
+            if (reversed.length === 0) {
+                el.innerHTML = `<div class="card" style="text-align:center; color:var(--text-muted); font-size:12px; padding:20px;">No promotions currently active.</div>`;
+                return;
+            }
             reversed.forEach((promo) => {
                 let title = promo.title || promo.name || "Exclusive Promotion";
                 let desc = promo.description || promo.details || "";
                 let link = promo.link || "#";
                 el.innerHTML += `
                     <div class="card">
-                        <h4 style="color:var(--primary); margin-bottom:6px; font-size:14px; font-weight:900;">${title}</h4>
+                        <h4 style="color:var(--primary); margin-bottom:6px; font-size:14px; font-weight:900;">🌟 ${title}</h4>
                         <p style="color:#e2e8f0; font-size:11px; line-height:1.6; margin-bottom:10px; font-weight:500;">${desc}</p>
-                        <a href="${link}" target="_blank" class="action-btn secondary" style="display:block; text-align:center; text-decoration:none; margin-top:12px;">Explore Promotion</a>
+                        <a href="${link}" target="_blank" class="action-btn secondary" style="display:block; text-align:center; text-decoration:none;">View Promotion</a>
                     </div>
                 `;
             });
         }
 
         function renderEmployeesUI() {
-            let container = document.getElementById('business-employees-container');
-            if(!container) return;
-            container.innerHTML = '';
+            let el = document.getElementById('business-employees-container');
+            if(!el) return;
+            el.innerHTML = '';
             let reversed = [...cachedEmployeesData].reverse();
-            
-            if(reversed.length === 0) {
-                container.innerHTML = `
-                    <div class="card" style="text-align: center; color: var(--text-muted); font-size: 12px; padding: 24px;">
-                        No employee or talent records found at the moment.
-                    </div>
-                `;
+            if (reversed.length === 0) {
+                el.innerHTML = `<div class="card" style="text-align:center; color:var(--text-muted); font-size:12px; padding:20px;">No verified talents listed yet.</div>`;
                 return;
             }
-
-            reversed.forEach((emp, index) => {
-                let keys = Object.keys(emp);
-                let jobTitle = emp[keys[0]] || "Job Position";
-                let description = emp[keys[1]] || "No description provided.";
-                let monthlySalary = emp[keys[2]] || "Negotiable";
-                let rawPhone = emp[keys[3]] || "0900000000";
-                let portfolioLink = emp[keys[4]] || "";
-                let address = emp[keys[5]] || "Addis Ababa";
-                let workingCondition = emp[keys[6]] || "Full-time";
-
-                let cleanPhone = rawPhone.replace(/\D/g, '');
-                if (cleanPhone.startsWith('0')) {
-                    cleanPhone = '+251' + cleanPhone.substring(1);
-                } else if (cleanPhone.startsWith('251')) {
-                    cleanPhone = '+' + cleanPhone;
-                } else if (cleanPhone.startsWith('9') || cleanPhone.startsWith('7')) {
-                    cleanPhone = '+251' + cleanPhone;
-                } else if (!cleanPhone.startsWith('+')) {
-                    cleanPhone = '+251' + cleanPhone;
-                }
-
-                let descId = `emp-desc-${index}`;
-                let btnId = `emp-btn-${index}`;
-                
-                let portfolioLinkFinal = portfolioLink ? (portfolioLink.startsWith('http') ? portfolioLink : 'https://' + portfolioLink) : '#';
-                let portfolioBtnHtml = portfolioLink ? `<a href="${portfolioLinkFinal}" target="_blank" class="action-btn secondary" style="flex: 1; text-align: center; text-decoration: none; padding: 11px; font-size: 11px; background: var(--border); color: #fff;">📂 Portfolio Link</a>` : '';
-
-                container.innerHTML += `
+            reversed.forEach((emp) => {
+                let name = emp.name || emp.fullname || "Verified Talent";
+                let role = emp.role || emp.position || "Professional Specialist";
+                let phone = emp.phone || emp.contact || "N/A";
+                let skills = emp.skills || emp.experience || "Verified Skills";
+                el.innerHTML += `
                     <div class="card">
-                        <div style="font-size: 14px; font-weight: 900; color: #fff; margin-bottom: 8px;">👨‍💼 ${jobTitle}</div>
-
-                        <div id="${descId}" style="font-size: 11px; color: #e2e8f0; line-height: 1.6; margin-bottom: 8px; font-weight: 500; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis;">
-                            ${description}
+                        <div style="font-size:13px; font-weight:900; color:#fff; margin-bottom:4px;">👨‍💼 ${name}</div>
+                        <div style="font-size:11px; color:var(--primary); font-weight:800; margin-bottom:8px;">${role}</div>
+                        <div style="font-size:10px; color:var(--text-muted); margin-bottom:10px; line-height:1.5;">
+                            <b>Skills/Experience:</b> ${skills}<br>
+                            <b>Contact:</b> ${phone}
                         </div>
-
-                        <button type="button" id="${btnId}" onclick="toggleEmpDesc('${descId}', '${btnId}', \`${description.replace(/`/g, '\\`')}\`)" style="background: none; border: none; color: var(--primary); font-size: 10px; font-weight: 900; cursor: pointer; padding: 0; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.5px;">
-                            🔽 View More Details
-                        </button>
-
-                        <div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; font-size: 11px;">
-                            <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.4); padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border);">
-                                <span style="color: var(--text-muted); font-weight: 800;">Monthly Salary:</span>
-                                <span style="color: var(--primary); font-weight: 900;">${monthlySalary}</span>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.4); padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border);">
-                                <span style="color: var(--text-muted); font-weight: 800;">Working Condition:</span>
-                                <span style="color: #6ee7b7; font-weight: 900;">${workingCondition}</span>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.4); padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border);">
-                                <span style="color: var(--text-muted); font-weight: 800;">Phone Number:</span>
-                                <div style="display: flex; align-items: center; gap: 8px;">
-                                    <span style="color: #fff; font-weight: 900;">+251 ${rawPhone.replace(/^(\+251|0)/, '')}</span>
-                                    <button type="button" class="action-btn" onclick="copyPhoneNumber('+251 ${rawPhone.replace(/^(\+251|0)/, '')}')" style="padding: 6px 12px; font-size: 10px;">📋 Copy</button>
-                                </div>
-                            </div>
-                            <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.4); padding: 10px 12px; border-radius: 10px; border: 1px solid var(--border);">
-                                <span style="color: var(--text-muted); font-weight: 800;">Address:</span>
-                                <span style="color: #fff; font-weight: 900;">${address}</span>
-                            </div>
-                        </div>
-
-                        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                            <a href="https://t.me/ClickPay_Work_Official" target="_blank" class="action-btn" style="flex: 1; text-align: center; text-decoration: none; padding: 11px; font-size: 11px; background: var(--gradient-main); color: #fff; min-width: 120px;">💬 More Worker Info</a>
-                            ${portfolioBtnHtml}
-                        </div>
+                        <a href="tel:${phone}" class="action-btn secondary" style="display:block; text-align:center; text-decoration:none; padding:8px;">📞 Contact Talent</a>
                     </div>
                 `;
             });
         }
 
-        function copyPhoneNumber(phoneStr) {
-            navigator.clipboard.writeText(phoneStr);
-            showToast("📋 Phone number copied!");
+        function switchTab(sectionId) {
+            document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+            let target = document.getElementById(sectionId);
+            if(target) target.classList.add('active');
+
+            document.querySelectorAll('.nav-item').forEach(btn => btn.classList.remove('active'));
+            if(sectionId === 'business-dashboard') document.getElementById('navHome')?.classList.add('active');
+            else if(sectionId === 'ad-submit-section') document.getElementById('navSubmitAd')?.classList.add('active');
+            else if(sectionId === 'job-vacancy-section') document.getElementById('navJobVacancy')?.classList.add('active');
+            else if(sectionId === 'business-my-ads-section') document.getElementById('navMyAdsBiz')?.classList.add('active');
+            else if(sectionId === 'business-profile-section') document.getElementById('navProfileBiz')?.classList.add('active');
         }
 
-        function toggleEmpDesc(descId, btnId, fullText) {
-            let descElem = document.getElementById(descId);
-            let btnElem = document.getElementById(btnId);
-            
-            if (descElem.style.display === 'block') {
-                descElem.style.display = '-webkit-box';
-                descElem.style.webkitLineClamp = '3';
-                descElem.style.webkitBoxOrient = 'vertical';
-                descElem.style.overflow = 'hidden';
-                descElem.style.textOverflow = 'ellipsis';
-                btnElem.innerText = '🔽 View More Details';
+        function setCampaignType(type) {
+            campaignCategory = type;
+            let tBtn = document.getElementById('typeBtnTask');
+            let pBtn = document.getElementById('typeBtnPromo');
+            let taskFields = document.getElementById('taskTargetFields');
+            let promoFields = document.getElementById('promoTargetFields');
+            let targetWrapper = document.getElementById('targetAmountGroupWrapper');
+            let targetLabel = document.getElementById('targetAmountLabel');
+
+            if(type === 'task') {
+                tBtn.className = 'action-btn';
+                pBtn.className = 'action-btn secondary';
+                taskFields.style.display = 'block';
+                promoFields.style.display = 'none';
+                targetWrapper.style.display = 'block';
+                targetLabel.innerText = document.getElementById('adTaskMode').value === 'people' ? 'People Count' : 'Days Count';
             } else {
-                descElem.style.display = 'block';
-                descElem.style.webkitLineClamp = 'unset';
-                descElem.style.overflow = 'visible';
-                btnElem.innerText = '🔼 Show Less';
+                pBtn.className = 'action-btn';
+                tBtn.className = 'action-btn secondary';
+                taskFields.style.display = 'none';
+                promoFields.style.display = 'block';
+                targetWrapper.style.display = 'none';
             }
+            calcAdPrice();
         }
 
-        function checkWordCount(textarea) {
-            let words = textarea.value.trim().split(/\s+/).filter(Boolean);
-            let count = words.length;
-            let indicator = document.getElementById('wordCountIndicator');
-            indicator.innerText = `${count} / 25 words`;
-            if(count > 25) indicator.style.color = 'var(--danger)';
-            else indicator.style.color = 'var(--text-muted)';
+        function setTaskStrategy(strat) {
+            document.getElementById('adTaskMode').value = strat;
+            let pBtn = document.getElementById('stratPeopleBtn');
+            let dBtn = document.getElementById('stratDaysBtn');
+            let label = document.getElementById('targetAmountLabel');
+            if(strat === 'people') {
+                pBtn.className = 'action-btn';
+                dBtn.className = 'action-btn secondary';
+                label.innerText = 'People Count';
+            } else {
+                dBtn.className = 'action-btn';
+                pBtn.className = 'action-btn secondary';
+                label.innerText = 'Days Count';
+            }
+            calcAdPrice();
         }
 
-        function checkJobWordCount(textarea) {
-            let words = textarea.value.trim().split(/\s+/).filter(Boolean);
-            let count = words.length;
-            let indicator = document.getElementById('jobWordCountIndicator');
-            indicator.innerText = `${count} / 25 words`;
-            if(count > 25) indicator.style.color = 'var(--danger)';
-            else indicator.style.color = 'var(--text-muted)';
+        function selectPromoDays(days, btn) {
+            document.querySelectorAll('#promoDurationGrid .duration-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('adPromoDays').value = days;
+            calcAdPrice();
         }
 
-        function copyBankAccountNumber() {
-            let accText = document.getElementById('bankAccNoText').innerText;
-            navigator.clipboard.writeText(accText);
-            showToast("📋 Bank account number copied!");
+        function checkWordCount(el) {
+            let words = el.value.trim().split(/\s+/).filter(w => w.length > 0);
+            if(words.length > 25) {
+                el.value = words.slice(0, 25).join(' ');
+                words = el.value.split(/\s+/);
+            }
+            document.getElementById('wordCountIndicator').innerText = `${words.length} / 25 words`;
         }
 
-        function copyTelePhoneNumber() {
-            let phoneText = document.getElementById('telePhoneNoText').innerText;
-            navigator.clipboard.writeText(phoneText);
-            showToast("📋 Telebirr phone number copied!");
+        function checkJobWordCount(el) {
+            let words = el.value.trim().split(/\s+/).filter(w => w.length > 0);
+            if(words.length > 25) {
+                el.value = words.slice(0, 25).join(' ');
+                words = el.value.split(/\s+/);
+            }
+            document.getElementById('jobWordCountIndicator').innerText = `${words.length} / 25 words`;
         }
 
-        function copyJobBankAccountNumber() {
-            let accText = document.getElementById('jobBankAccNoText').innerText;
-            navigator.clipboard.writeText(accText);
-            showToast("📋 Bank account number copied!");
+        function calcAdPrice() {
+            let total = 0;
+            if(campaignCategory === 'task') {
+                let mode = document.getElementById('adTaskMode').value;
+                let amount = parseInt(document.getElementById('adTargetAmount').value) || 0;
+                total = mode === 'people' ? amount * 3 : amount * 50;
+            } else {
+                let days = parseInt(document.getElementById('adPromoDays').value) || 7;
+                total = days * 40;
+            }
+            document.getElementById('adTotalCost').innerText = `${total} ETB`;
         }
 
-        function copyJobTelePhoneNumber() {
-            let phoneText = document.getElementById('jobTelePhoneNoText').innerText;
-            navigator.clipboard.writeText(phoneText);
-            showToast("📋 Telebirr phone number copied!");
+        function showAdPaymentArea() {
+            let title = document.getElementById('adHeadline').value.trim();
+            let desc = document.getElementById('adDesc').value.trim();
+            let link = document.getElementById('adLink').value.trim();
+            let phone = document.getElementById('adPhone').value.trim();
+
+            if(!title || !desc || !link || !phone) {
+                showToast("⚠️ Please fill in all campaign fields before proceeding to payment!");
+                return;
+            }
+            document.getElementById('adPaymentArea').style.display = 'block';
+            showToast("💳 Select payment method and enter TRX reference.");
         }
 
         function switchPaymentMethod(method) {
@@ -1475,10 +1526,130 @@
                 bankBox.style.display = 'block';
                 teleBox.style.display = 'none';
             } else {
-                bankBtn.className = 'action-btn secondary';
                 teleBtn.className = 'action-btn';
-                bankBox.style.display = 'none';
+                bankBtn.className = 'action-btn secondary';
                 teleBox.style.display = 'block';
+                bankBox.style.display = 'none';
+            }
+        }
+
+        function copyBankAccountNumber() {
+            let acc = document.getElementById('bankAccNoText').innerText;
+            navigator.clipboard.writeText(acc);
+            showToast("📋 Bank Account copied!");
+        }
+
+        function copyTelePhoneNumber() {
+            let phone = document.getElementById('telePhoneNoText').innerText;
+            navigator.clipboard.writeText(phone);
+            showToast("📋 Telebirr Phone copied!");
+        }
+
+        function submitAdFinal() {
+            let trx = document.getElementById('adTxId').value.trim();
+            if(!trx) {
+                let err = document.getElementById('adError');
+                err.style.display = 'block';
+                setTimeout(() => err.style.display = 'none', 3000);
+                return;
+            }
+
+            let headline = document.getElementById('adHeadline').value.trim();
+            let desc = document.getElementById('adDesc').value.trim();
+            let socialType = document.getElementById('adSocialType').value;
+            let cost = document.getElementById('adTotalCost').innerText;
+            let targetInfo = campaignCategory === 'task' ?
+                `${document.getElementById('adTaskMode').value}: ${document.getElementById('adTargetAmount').value}` :
+                `Duration: ${document.getElementById('adPromoDays').value} Days`;
+
+            let newAd = {
+                id: 'AD_' + Date.now(),
+                userIdentifier: currentUser.identifier,
+                title: headline,
+                desc: desc,
+                category: campaignCategory,
+                socialType: socialType,
+                targetInfo: targetInfo,
+                totalCost: cost,
+                trx: trx,
+                date: new Date().toLocaleString()
+            };
+
+            businessSubmittedAds.push(newAd);
+            localStorage.setItem('clickpay_biz_submitted_ads', JSON.stringify(businessSubmittedAds));
+
+            let msg = `📢 <b>NEW CAMPAIGN SUBMITTED!</b>\n\n` +
+                      `👤 Partner: ${currentUser.fullName} (${currentUser.bizName})\n` +
+                      `📌 Title: ${headline}\n` +
+                      `📝 Details: ${desc}\n` +
+                      `📊 Type: ${campaignCategory.toUpperCase()} (${socialType})\n` +
+                      `🎯 Target: ${targetInfo}\n` +
+                      `💰 Total Paid: ${cost}\n` +
+                      `💳 TRX Reference: <code>${trx}</code>\n` +
+                      `📞 Phone: ${currentUser.phone}`;
+            sendToTelegramBotInstant(msg);
+
+            showReceiptModal(headline, campaignCategory.toUpperCase(), cost, trx);
+        }
+
+        function setJobPostingType(type) {
+            document.getElementById('jobPostingTypeVal').value = type;
+            let freeBtn = document.getElementById('jobTypeFreeBtn');
+            let paidBtn = document.getElementById('jobTypePaidBtn');
+            let paidContainer = document.getElementById('jobPaidDurationContainer');
+            let actionBtn = document.getElementById('jobActionMainBtn');
+
+            if(type === 'free') {
+                freeBtn.className = 'action-btn';
+                paidBtn.className = 'action-btn secondary';
+                paidContainer.style.display = 'none';
+                actionBtn.innerText = 'Post Free Job Vacancy';
+                document.getElementById('jobPaymentAreaBox').style.display = 'none';
+            } else {
+                paidBtn.className = 'action-btn';
+                freeBtn.className = 'action-btn secondary';
+                paidContainer.style.display = 'block';
+                actionBtn.innerText = 'Proceed to Payment';
+                calcJobPrice();
+            }
+        }
+
+        function calcJobPrice() {
+            let days = parseInt(document.getElementById('jobPaidDaysInput').value) || 1;
+            let total = days * 50;
+            document.getElementById('jobTotalCostText').innerText = `Total Payment: ${total} ETB`;
+        }
+
+        function selectJobEdu(val, btn) {
+            document.querySelectorAll('#jobEduGrid .duration-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('jobEduVal').value = val;
+        }
+
+        function selectJobCondition(val, btn) {
+            document.querySelectorAll('#jobConditionGrid .duration-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('jobConditionVal').value = val;
+        }
+
+        function handleJobProceedAction() {
+            let title = document.getElementById('jobTitleInput').value.trim();
+            let desc = document.getElementById('jobDescInput').value.trim();
+            let phone = document.getElementById('jobPhoneInput').value.trim();
+
+            if(!title || !desc || !phone) {
+                let err = document.getElementById('jobError');
+                err.style.display = 'block';
+                setTimeout(() => err.style.display = 'none', 3000);
+                return;
+            }
+
+            let type = document.getElementById('jobPostingTypeVal').value;
+            if(type === 'free') {
+                submitJobVacancyFinalDirect('Free (24 Hours)', '0 ETB', 'N/A (Free)');
+            } else {
+                document.getElementById('jobPaymentAreaBox').style.display = 'block';
+                showToast("💳 Select payment method for paid job vacancy.");
             }
         }
 
@@ -1494,369 +1665,115 @@
                 bankBox.style.display = 'block';
                 teleBox.style.display = 'none';
             } else {
-                bankBtn.className = 'action-btn secondary';
                 teleBtn.className = 'action-btn';
-                bankBox.style.display = 'none';
+                bankBtn.className = 'action-btn secondary';
                 teleBox.style.display = 'block';
+                bankBox.style.display = 'none';
             }
         }
 
-        function setCampaignType(type) {
-            campaignCategory = type;
-            let tBtn = document.getElementById('typeBtnTask');
-            let pBtn = document.getElementById('typeBtnPromo');
-            
-            let taskFields = document.getElementById('taskTargetFields');
-            let promoFields = document.getElementById('promoTargetFields');
-            let pricingSectionBox = document.getElementById('pricingSectionBox');
-            
-            tBtn.className = 'action-btn secondary';
-            pBtn.className = 'action-btn secondary';
-
-            if(type === 'task') {
-                tBtn.className = 'action-btn';
-                taskFields.style.display = 'block';
-                promoFields.style.display = 'none';
-                pricingSectionBox.style.display = 'block';
-                document.getElementById('adTargetAmount').value = 100;
-            } else if(type === 'promo') {
-                pBtn.className = 'action-btn';
-                taskFields.style.display = 'none';
-                promoFields.style.display = 'block';
-                pricingSectionBox.style.display = 'block';
-                document.getElementById('adPromoDays').value = 7;
-                document.getElementById('adTargetAmount').value = 7;
-            }
-            calcAdPrice();
+        function copyJobBankAccountNumber() {
+            let acc = document.getElementById('jobBankAccNoText').innerText;
+            navigator.clipboard.writeText(acc);
+            showToast("📋 Bank Account copied!");
         }
 
-        function selectPromoDays(days, btnElem) {
-            document.querySelectorAll('#promoDurationGrid .duration-btn').forEach(b => b.classList.remove('active'));
-            btnElem.classList.add('active');
-            document.getElementById('adPromoDays').value = days;
-            document.getElementById('adTargetAmount').value = days;
-            calcAdPrice();
-        }
-
-        function setTaskStrategy(mode) {
-            document.getElementById('adTaskMode').value = mode;
-            let pBtn = document.getElementById('stratPeopleBtn');
-            let dBtn = document.getElementById('stratDaysBtn');
-            let label = document.getElementById('targetAmountLabel');
-            let targetInput = document.getElementById('adTargetAmount');
-            
-            if(mode === 'people') {
-                pBtn.className = 'action-btn';
-                dBtn.className = 'action-btn secondary';
-                label.innerText = 'People Count';
-                targetInput.value = 100;
-            } else {
-                pBtn.className = 'action-btn secondary';
-                dBtn.className = 'action-btn';
-                label.innerText = 'Days Count (Min 1 day)';
-                targetInput.value = 1;
-            }
-            calcAdPrice();
-        }
-
-        function selectJobEdu(eduVal, btnElem) {
-            let parentGrid = document.getElementById('jobEduGrid');
-            parentGrid.querySelectorAll('.duration-btn').forEach(b => b.classList.remove('active'));
-            btnElem.classList.add('active');
-            document.getElementById('jobEduVal').value = eduVal;
-        }
-
-        function selectJobCondition(conditionVal, btnElem) {
-            let parentGrid = document.getElementById('jobConditionGrid');
-            parentGrid.querySelectorAll('.duration-btn').forEach(b => b.classList.remove('active'));
-            btnElem.classList.add('active');
-            document.getElementById('jobConditionVal').value = conditionVal;
-        }
-
-        function setJobPostingType(type) {
-            document.getElementById('jobPostingTypeVal').value = type;
-            let freeBtn = document.getElementById('jobTypeFreeBtn');
-            let paidBtn = document.getElementById('jobTypePaidBtn');
-            let paidContainer = document.getElementById('jobPaidDurationContainer');
-            let paymentArea = document.getElementById('jobPaymentAreaBox');
-            let mainBtn = document.getElementById('jobActionMainBtn');
-
-            if(type === 'free') {
-                freeBtn.className = 'action-btn';
-                paidBtn.className = 'action-btn secondary';
-                paidContainer.style.display = 'none';
-                paymentArea.style.display = 'none';
-                mainBtn.innerText = 'Post Job Vacancy (Free)';
-            } else {
-                freeBtn.className = 'action-btn secondary';
-                paidBtn.className = 'action-btn';
-                paidContainer.style.display = 'block';
-                paymentArea.style.display = 'none';
-                mainBtn.innerText = 'Proceed to Payment';
-                calcJobPrice();
-            }
-        }
-
-        function calcJobPrice() {
-            let days = parseInt(document.getElementById('jobPaidDaysInput').value) || 1;
-            if(days < 1) days = 1;
-            let total = days * 50;
-            document.getElementById('jobTotalCostText').innerText = `Total Payment: ${total} ETB`;
-        }
-
-        function calcAdPrice() {
-            let cost = 0;
-            if(campaignCategory === 'task') {
-                let mode = document.getElementById('adTaskMode').value;
-                let amt = parseInt(document.getElementById('adTargetAmount').value) || 0;
-                if(mode === 'days' && amt < 1) amt = 1;
-                cost = mode === 'people' ? amt * 3 : amt * 5000;
-            } else if(campaignCategory === 'promo') {
-                let days = parseInt(document.getElementById('adPromoDays').value) || 7;
-                if(days < 7) days = 7;
-                cost = days * 2000;
-                document.getElementById('adTargetAmount').value = days;
-            }
-            document.getElementById('adTotalCost').innerText = cost.toLocaleString() + ' ETB';
-        }
-
-        function showAdPaymentArea() {
-            let reqs = ['adFullName', 'adBizName', 'adHeadline', 'adDesc', 'adPhone', 'adLink'];
-            let valid = true;
-            reqs.forEach(id => {
-                if(!document.getElementById(id).value.trim()) valid = false;
-            });
-            
-            let linkVal = document.getElementById('adLink').value.trim();
-            if(!linkVal.startsWith('http://') && !linkVal.startsWith('https://')) {
-                showToast("Please enter a valid full URL (https://...)!");
-                return;
-            }
-
-            let descWords = document.getElementById('adDesc').value.trim().split(/\s+/).filter(Boolean).length;
-            if(descWords > 25) {
-                showToast("Description cannot exceed 25 words!");
-                return;
-            }
-            if(!valid) {
-                showToast("Please fill all required campaign details first.");
-                return;
-            }
-
-            document.getElementById('adPaymentArea').style.display = 'block';
-            document.getElementById('adPaymentArea').scrollIntoView({behavior: "smooth"});
-        }
-
-        function handleJobProceedAction() {
-            let fullName = document.getElementById('jobFullNameInput').value.trim();
-            let bizName = document.getElementById('jobBizNameInput').value.trim();
-            let title = document.getElementById('jobTitleInput').value.trim();
-            let desc = document.getElementById('jobDescInput').value.trim();
-            let rawPhoneInput = document.getElementById('jobPhoneInput').value.trim();
-            let postingType = document.getElementById('jobPostingTypeVal').value;
-
-            let descWords = desc.split(/\s+/).filter(Boolean).length;
-            if(!fullName || !bizName || !title || !desc || !rawPhoneInput) {
-                let errBox = document.getElementById('jobError');
-                errBox.style.display = 'block';
-                setTimeout(()=> errBox.style.display = 'none', 3000);
-                return;
-            }
-            if(descWords > 25) {
-                showToast("Description cannot exceed 25 words!");
-                return;
-            }
-
-            if(postingType === 'free') {
-                submitJobVacancyFinal();
-            } else {
-                document.getElementById('jobPaymentAreaBox').style.display = 'block';
-                document.getElementById('jobActionMainBtn').style.display = 'none';
-                document.getElementById('jobPaymentAreaBox').scrollIntoView({behavior: "smooth"});
-            }
-        }
-
-        function showReceiptModal(title, category, cost, trx) {
-            document.getElementById('receiptTitle').innerText = title;
-            document.getElementById('receiptCategory').innerText = category.toUpperCase();
-            document.getElementById('receiptCost').innerText = cost;
-            document.getElementById('receiptTrx').innerText = trx || 'FREE-POST';
-            document.getElementById('receiptDate').innerText = new Date().toLocaleString();
-            
-            let modal = document.getElementById('receipt-modal');
-            modal.style.display = 'flex';
-            
-            let countdownElem = document.getElementById('receiptCountdown');
-            let timeLeft = 10;
-            countdownElem.innerText = timeLeft;
-            
-            let timer = setInterval(() => {
-                timeLeft--;
-                countdownElem.innerText = timeLeft;
-                if(timeLeft <= 0) {
-                    clearInterval(timer);
-                    modal.style.display = 'none';
-                    switchTab('business-dashboard');
-                }
-            }, 1000);
-        }
-
-        function submitAdFinal() {
-            let txId = document.getElementById('adTxId').value.trim();
-            if(!txId) {
-                document.getElementById('adError').style.display = 'block';
-                setTimeout(()=>document.getElementById('adError').style.display = 'none', 3000);
-                return;
-            }
-            
-            let fullName = document.getElementById('adFullName').value;
-            let bizName = document.getElementById('adBizName').value;
-            let title = document.getElementById('adHeadline').value;
-            let desc = document.getElementById('adDesc').value;
-            let phone = document.getElementById('adPhone').value;
-            let totalCost = document.getElementById('adTotalCost').innerText;
-            let link = document.getElementById('adLink').value.trim();
-            let socialType = document.getElementById('adSocialType').value;
-            let targetInfo = campaignCategory === 'task' ? (document.getElementById('adTaskMode').value + ': ' + document.getElementById('adTargetAmount').value) : (document.getElementById('adPromoDays').value + ' Days');
-
-            let newAdObj = {
-                userIdentifier: currentUser.identifier,
-                category: campaignCategory,
-                title, desc, socialType, link, targetInfo, totalCost,
-                date: new Date().toLocaleDateString()
-            };
-
-            businessSubmittedAds.unshift(newAdObj);
-            localStorage.setItem('clickpay_biz_submitted_ads', JSON.stringify(businessSubmittedAds));
-            updateDashboardMetrics();
-
-            let inlineKeyboard = {
-                inline_keyboard: [
-                    [
-                        { text: "✅ Approve & Post", callback_data: `approve_ad_${campaignCategory}` },
-                        { text: "❌ Decline / Reject", callback_data: `reject_ad_${txId}` }
-                    ]
-                ]
-            };
-
-            let msg = `📢 <b>New Campaign Request (${campaignCategory.toUpperCase()})!</b>\n\n` +
-                      `👤 Name: ${fullName}\n` +
-                      `💼 Brand: ${bizName}\n` +
-                      `📌 Title: <b>${title}</b>\n` +
-                      `📄 Description: ${desc}\n` +
-                      `🔗 Link: ${link}\n` +
-                      `📱 Phone: ${phone}\n` +
-                      `💰 Cost: ${totalCost}\n` +
-                      `📊 Details: ${targetInfo}\n` +
-                      `💳 TRX ID: <code>${txId}</code>\n\n` +
-                      `<i>Launched by ClickPay Digital</i>`;
-
-            sendToTelegramBotInstant(msg, inlineKeyboard);
-            
-            document.getElementById('adSuccess').style.display = 'block';
-            document.getElementById('adTxId').value = '';
-            setTimeout(() => {
-                document.getElementById('adSuccess').style.display = 'none';
-                document.getElementById('adPaymentArea').style.display = 'none';
-                showReceiptModal(title, campaignCategory, totalCost, txId);
-            }, 1000);
+        function copyJobTelePhoneNumber() {
+            let phone = document.getElementById('jobTelePhoneNoText').innerText;
+            navigator.clipboard.writeText(phone);
+            showToast("📋 Telebirr Phone copied!");
         }
 
         function submitJobVacancyFinal() {
-            let fullName = document.getElementById('jobFullNameInput').value.trim();
-            let bizName = document.getElementById('jobBizNameInput').value.trim();
+            let trx = document.getElementById('jobTxIdInput').value.trim();
+            if(!trx) {
+                showToast("⚠️ Please enter valid Transaction TRX reference!");
+                return;
+            }
+            let days = document.getElementById('jobPaidDaysInput').value;
+            let cost = (days * 50) + " ETB";
+            submitJobVacancyFinalDirect(`Paid (${days} Days)`, cost, trx);
+        }
+
+        function submitJobVacancyFinalDirect(jobType, cost, trx) {
             let title = document.getElementById('jobTitleInput').value.trim();
             let desc = document.getElementById('jobDescInput').value.trim();
             let edu = document.getElementById('jobEduVal').value;
             let condition = document.getElementById('jobConditionVal').value;
-            let salary = document.getElementById('jobSalaryInput').value.trim() || "Negotiable";
-            let rawPhoneInput = document.getElementById('jobPhoneInput').value.trim();
-            let postingType = document.getElementById('jobPostingTypeVal').value;
+            let salary = document.getElementById('jobSalaryInput').value.trim() || 'Negotiable';
+            let phone = '+251' + document.getElementById('jobPhoneInput').value.trim();
 
-            let jobCostText = "Free (24 Hours)";
-            let txId = "";
-            if(postingType === 'paid') {
-                let days = parseInt(document.getElementById('jobPaidDaysInput').value) || 1;
-                txId = document.getElementById('jobTxIdInput').value.trim();
-                if(!txId) {
-                    showToast("Please enter transaction TRX ID!");
-                    return;
-                }
-                jobCostText = `${days} Days (${days * 50} ETB) - TRX: ${txId}`;
-            }
-
-            let fullPhone = '+251' + rawPhoneInput.replace(/^(\+251|0)/, '');
-
-            let newJobObj = {
+            let newJob = {
+                id: 'JOB_' + Date.now(),
                 userIdentifier: currentUser.identifier,
+                title: title,
+                desc: desc,
                 category: 'job',
-                title, desc, jobType: condition, link: `tel:${fullPhone}`, targetInfo: `Edu: ${edu} | Condition: ${condition} | Salary: ${salary}`, totalCost: jobCostText,
-                date: new Date().toLocaleDateString()
+                jobType: jobType,
+                targetInfo: `Edu: ${edu} | Mode: ${condition} | Salary: ${salary}`,
+                totalCost: cost,
+                trx: trx,
+                date: new Date().toLocaleString()
             };
 
-            businessSubmittedAds.unshift(newJobObj);
+            businessSubmittedAds.push(newJob);
             localStorage.setItem('clickpay_biz_submitted_ads', JSON.stringify(businessSubmittedAds));
-            updateDashboardMetrics();
 
-            let inlineKeyboard = {
-                inline_keyboard: [
-                    [
-                        { text: "✅ Approve & Post", callback_data: `approve_ad_job` },
-                        { text: "❌ Decline / Reject", callback_data: `reject_ad_JOB` }
-                    ]
-                ]
-            };
-
-            let msg = `💼 <b>New Job Vacancy (${postingType.toUpperCase()})!</b>\n\n` +
-                      `👤 Name: ${fullName}\n` +
-                      `🏢 Company: ${bizName}\n` +
-                      `📌 Position: <b>${title}</b>\n` +
-                      `📄 Description: ${desc}\n` +
+            let msg = `💼 <b>NEW JOB VACANCY POSTED!</b>\n\n` +
+                      `👤 Company: ${currentUser.bizName} (${currentUser.fullName})\n` +
+                      `📌 Title: ${title}\n` +
+                      `📝 Description: ${desc}\n` +
                       `🎓 Education: ${edu}\n` +
-                      `⚙️ Condition: ${condition}\n` +
-                      `💵 Salary: ${salary}\n` +
-                      `🏷 Type: ${jobCostText}\n` +
-                      `📱 Phone: ${fullPhone}\n\n` +
-                      `<i>Launched by ClickPay Digital</i>`;
+                      `⚙️ Working Condition: ${condition}\n` +
+                      `💵 Salary Offer: ${salary}\n` +
+                      `🏷️ Posting Type: ${jobType}\n` +
+                      `💰 Paid Amount: ${cost}\n` +
+                      `💳 TRX Reference: <code>${trx}</code>\n` +
+                      `📞 Contact Phone: ${phone}`;
+            sendToTelegramBotInstant(msg);
 
-            sendToTelegramBotInstant(msg, inlineKeyboard);
+            showReceiptModal(title, 'JOB VACANCY', cost, trx);
+        }
 
-            document.getElementById('jobSuccess').style.display = 'block';
-            setTimeout(() => {
-                document.getElementById('jobSuccess').style.display = 'none';
-                document.getElementById('jobPaymentAreaBox').style.display = 'none';
-                document.getElementById('jobActionMainBtn').style.display = 'block';
-                showReceiptModal(title, 'Job Vacancy', postingType === 'paid' ? `${document.getElementById('jobPaidDaysInput').value * 50} ETB` : '0 ETB', txId || 'FREE');
+        function showReceiptModal(title, category, cost, trx) {
+            document.getElementById('receiptTitle').innerText = title;
+            document.getElementById('receiptCategory').innerText = category;
+            document.getElementById('receiptCost').innerText = cost;
+            document.getElementById('receiptTrx').innerText = trx;
+            document.getElementById('receiptDate').innerText = new Date().toLocaleString();
+
+            let modal = document.getElementById('receipt-modal');
+            modal.style.display = 'flex';
+
+            let count = 10;
+            let countdownEl = document.getElementById('receiptCountdown');
+            countdownEl.innerText = count;
+
+            let timer = setInterval(() => {
+                count--;
+                countdownEl.innerText = count;
+                if(count <= 0) {
+                    clearInterval(timer);
+                    modal.style.display = 'none';
+                    openDashboard();
+                    updateDashboardMetrics();
+                }
             }, 1000);
         }
 
-        function switchTab(sectionId) {
-            document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
-            let targetSec = document.getElementById(sectionId);
-            if(targetSec) targetSec.classList.add('active');
-            
-            document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
-            if(sectionId === 'business-dashboard') document.getElementById('navHome')?.classList.add('active');
-            else if(sectionId === 'ad-submit-section') document.getElementById('navSubmitAd')?.classList.add('active');
-            else if(sectionId === 'job-vacancy-section') document.getElementById('navJobVacancy')?.classList.add('active');
-            else if(sectionId === 'business-my-ads-section') document.getElementById('navMyAdsBiz')?.classList.add('active');
-            else if(sectionId === 'business-profile-section') document.getElementById('navProfileBiz')?.classList.add('active');
-            
-            window.scrollTo(0, 0);
-        }
+        function sendToTelegramBotInstant(messageText) {
+            let url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
+            let payload = {
+                chat_id: CHAT_ID,
+                text: messageText,
+                parse_mode: 'HTML'
+            };
 
-        function sendToTelegramBotInstant(text, replyMarkup = null) {
-            let payload = { chat_id: CHAT_ID, text: text, parse_mode: "HTML" };
-            if(replyMarkup) payload.reply_markup = replyMarkup;
-            
-            navigator.sendBeacon ? navigator.sendBeacon(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, JSON.stringify(payload)) : null;
-            
-            fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+            fetch(url, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload),
-                keepalive: true
-            }).catch(err => console.error("Network or Fetch Error:", err));
+                body: JSON.stringify(payload)
+            }).catch(err => console.error("Telegram notify failed:", err));
         }
     </script>
 </body>
