@@ -995,20 +995,25 @@
                     <div class="form-group">
                         <label>Education Level</label>
                         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 6px;" id="jobEduGrid">
-                            <button type="button" class="action-btn secondary" onclick="selectJobEdu('Degree', this)">Degree</button>
+                            <button type="button" class="action-btn" onclick="selectJobEdu('Degree', this)">Degree</button>
+                            <button type="button" class="action-btn secondary" onclick="selectJobEdu('Master', this)">Master</button>
                             <button type="button" class="action-btn secondary" onclick="selectJobEdu('Diploma', this)">Diploma</button>
                             <button type="button" class="action-btn secondary" onclick="selectJobEdu('Certificate', this)">Certificate</button>
+                            <button type="button" class="action-btn secondary" onclick="selectJobEdu('12/10 Complete', this)">12/10 Complete</button>
                             <button type="button" class="action-btn secondary" onclick="selectJobEdu('Experience / Freelance', this)">Experience Required</button>
                         </div>
                         <input type="hidden" id="jobEduVal" value="Degree">
                     </div>
 
                     <div class="form-group">
-                        <label>Status</label>
+                        <label>Working Condition / Status</label>
                         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 6px;" id="jobConditionGrid">
-                            <!-- Populated dynamically via JS -->
+                            <button type="button" class="action-btn" onclick="selectJobCondition('Full Time', this)">Full Time</button>
+                            <button type="button" class="action-btn secondary" onclick="selectJobCondition('Contract', this)">Contract</button>
+                            <button type="button" class="action-btn secondary" onclick="selectJobCondition('Freelance', this)">Freelance</button>
+                            <button type="button" class="action-btn secondary" onclick="selectJobCondition('Remote', this)">Remote</button>
                         </div>
-                        <input type="hidden" id="jobConditionVal" value="">
+                        <input type="hidden" id="jobConditionVal" value="Full Time">
                         <div id="jobConditionEmptyMsg" style="font-size: 11px; color: var(--text-muted); margin-top: 6px; display: none;">No statuses available from sheet.</div>
                     </div>
 
@@ -1016,6 +1021,13 @@
                         <div class="form-group">
                             <label>Salary Offer</label>
                             <input type="text" id="jobSalaryInput" placeholder="e.g. 10,000 - 15,000 ETB">
+                        </div>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 12px;">
+                        <div class="form-group">
+                            <label>Address / Location</label>
+                            <input type="text" id="jobAddressInput" placeholder="e.g. Bole, Addis Ababa">
                         </div>
                     </div>
 
@@ -1386,44 +1398,6 @@
                     cachedDailyAdsData = data;
                     renderDailyAdsUI();
                 }
-            });
-
-            loadGoogleSheetCSV(WORKING_CONDITION_SHEET_URL, (data) => {
-                if(data && data.length > 0) {
-                    let conditions = data.map(row => row.status || row.workingcondition || row.condition || row.name || Object.values(row)[0]).filter(Boolean);
-                    cachedWorkingConditionsData = conditions;
-                    renderWorkingConditionButtons();
-                } else {
-                    cachedWorkingConditionsData = [];
-                    renderWorkingConditionButtons();
-                }
-            });
-        }
-
-        function renderWorkingConditionButtons() {
-            let grid = document.getElementById('jobConditionGrid');
-            let emptyMsg = document.getElementById('jobConditionEmptyMsg');
-            if(!grid) return;
-            
-            grid.innerHTML = '';
-            let currentVal = document.getElementById('jobConditionVal').value;
-
-            if(cachedWorkingConditionsData.length === 0) {
-                if(emptyMsg) emptyMsg.style.display = 'block';
-                document.getElementById('jobConditionVal').value = '';
-                return;
-            } else {
-                if(emptyMsg) emptyMsg.style.display = 'none';
-            }
-
-            cachedWorkingConditionsData.forEach((cond, idx) => {
-                let isSelected = (idx === 0 && !currentVal) || currentVal === cond;
-                if(isSelected && !currentVal) {
-                    document.getElementById('jobConditionVal').value = cond;
-                }
-                grid.innerHTML += `
-                    <button type="button" class="action-btn ${isSelected ? '' : 'secondary'}" onclick="selectJobCondition('${cond}', this)">${cond}</button>
-                `;
             });
         }
 
@@ -1915,6 +1889,7 @@
             let edu = document.getElementById('jobEduVal').value;
             let condition = document.getElementById('jobConditionVal').value;
             let salary = document.getElementById('jobSalaryInput').value.trim() || 'Negotiable';
+            let address = document.getElementById('jobAddressInput').value.trim() || 'Addis Ababa, Ethiopia';
             let phone = '+251' + document.getElementById('jobPhoneInput').value.trim();
 
             let newJob = {
@@ -1924,7 +1899,7 @@
                 desc: desc,
                 category: 'job',
                 jobType: jobType,
-                targetInfo: `Edu: ${edu} | Status: ${condition} | Salary: ${salary}`,
+                targetInfo: `Edu: ${edu} | Status: ${condition} | Salary: ${salary} | Address: ${address}`,
                 totalCost: cost,
                 trx: trx,
                 date: new Date().toLocaleString()
@@ -1940,6 +1915,7 @@
                       `🎓 Education: ${edu}\n` +
                       `⚙️ Status: ${condition}\n` +
                       `💵 Salary Offer: ${salary}\n` +
+                      `📍 Address: ${address}\n` +
                       `🏷️ Posting Type: ${jobType}\n` +
                       `💰 Paid Amount: ${cost}\n` +
                       `💳 TRX Reference: <code>${trx}</code>\n` +
