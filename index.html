@@ -7,19 +7,19 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
         :root {
-            --bg-color: #09090b;
-            --card-bg: #121215;
+            --bg-color: #060608;
+            --card-bg: #101014;
             --primary: #f59e0b;
             --primary-hover: #d97706;
             --text-light: #f8fafc;
             --text-muted: #94a3b8;
-            --border: #27272a;
+            --border: #232329;
             --accent: #3b82f6;
             --danger: #ef4444;
             --warning: #f59e0b;
-            --glow: rgba(245, 158, 11, 0.25);
+            --glow: rgba(245, 158, 11, 0.2);
             --gradient-main: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
-            --glass-bg: rgba(18, 18, 21, 0.85);
+            --glass-bg: rgba(16, 16, 20, 0.88);
         }
 
         *, *::before, *::after {
@@ -41,7 +41,7 @@
         #intro-screen {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, #18181b 0%, #09090b 100%);
+            background: radial-gradient(circle at center, #141417 0%, #060608 100%);
             z-index: 99999;
             display: flex;
             flex-direction: column;
@@ -59,8 +59,8 @@
         .intro-laser-grid {
             position: absolute;
             width: 200%; height: 200%;
-            background-image: linear-gradient(rgba(245, 158, 11, 0.06) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(245, 158, 11, 0.06) 1px, transparent 1px);
+            background-image: linear-gradient(rgba(245, 158, 11, 0.05) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(245, 158, 11, 0.05) 1px, transparent 1px);
             background-size: 40px 40px;
             animation: gridMove 20s linear infinite;
         }
@@ -69,7 +69,7 @@
             100% { transform: translate(40px, 40px); }
         }
         .intro-logo-box {
-            font-size: 40px;
+            font-size: 38px;
             font-weight: 900;
             background: var(--gradient-main);
             -webkit-background-clip: text;
@@ -139,7 +139,7 @@
         }
 
         header h1 { 
-            font-size: 14px; 
+            font-size: 13px; 
             color: var(--primary); 
             font-weight: 900; 
             text-transform: uppercase; 
@@ -202,6 +202,139 @@
             transform: translateY(-2px);
         }
         .card:hover::before { opacity: 1; }
+
+        .talent-card {
+            background: linear-gradient(145deg, #121216 0%, #0c0c0e 100%);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 22px;
+            margin-bottom: 18px;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.6);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .talent-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 3px;
+            background: var(--gradient-main);
+        }
+        .talent-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 18px 45px rgba(245, 158, 11, 0.15);
+            transform: translateY(-3px);
+        }
+        .talent-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+        }
+        .talent-title {
+            font-size: 16px;
+            font-weight: 900;
+            color: #fff;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .talent-badge {
+            font-size: 8px;
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 8px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            border: 1px solid rgba(245, 158, 11, 0.3);
+        }
+        .talent-desc-box {
+            background: rgba(0,0,0,0.45);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 14px;
+            margin-bottom: 14px;
+        }
+        .talent-desc-text {
+            font-size: 12px;
+            color: #cbd5e1;
+            line-height: 1.6;
+            font-weight: 500;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .talent-meta-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+        .talent-meta-item {
+            background: rgba(0,0,0,0.35);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 10px 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .talent-meta-label {
+            font-size: 8px;
+            color: var(--text-muted);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .talent-meta-val {
+            font-size: 11px;
+            font-weight: 900;
+            color: #fff;
+        }
+        .talent-phone-row {
+            background: rgba(0,0,0,0.5);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 12px 14px;
+            margin-bottom: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .talent-actions-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .talent-btn {
+            background: var(--gradient-main);
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            text-decoration: none;
+            box-shadow: 0 4px 15px var(--glow);
+            transition: all 0.2s ease;
+        }
+        .talent-btn:hover { filter: brightness(1.1); transform: translateY(-2px); }
+        .talent-btn.secondary-btn {
+            background: rgba(59, 130, 246, 0.15);
+            border: 1px solid var(--accent);
+            color: #60a5fa;
+            box-shadow: none;
+        }
+        .talent-btn.secondary-btn:hover { background: rgba(59, 130, 246, 0.25); }
 
         .clickpay-boost-ticker {
             background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(59, 130, 246, 0.12));
@@ -331,7 +464,6 @@
         .action-btn:active { transform: scale(0.97); }
         .action-btn.secondary { background: var(--border); color: var(--text-light); border: 1px solid rgba(255,255,255,0.08); box-shadow: none; }
         .action-btn.secondary:hover { background: #27272a; }
-        .action-btn.danger { background: var(--danger); box-shadow: 0 6px 20px rgba(239, 68, 68, 0.3); }
 
         .box {
             background: var(--card-bg);
@@ -394,39 +526,12 @@
         }
 
         .gateway-chooser {
-            background: radial-gradient(circle at center, rgba(245,158,11,0.12) 0%, rgba(9,9,11,0.98) 100%);
+            background: radial-gradient(circle at center, rgba(245,158,11,0.12) 0%, rgba(6,6,8,0.98) 100%);
             border: 1px solid var(--border);
             border-radius: 26px;
             padding: 32px 20px;
             text-align: center;
             box-shadow: 0 25px 50px rgba(0,0,0,0.7);
-        }
-
-        .duration-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 8px;
-            margin-top: 6px;
-            margin-bottom: 12px;
-        }
-        .duration-btn {
-            background: rgba(0,0,0,0.5);
-            border: 1px solid var(--border);
-            color: var(--text-light);
-            padding: 10px 6px;
-            border-radius: 10px;
-            font-size: 11px;
-            font-weight: 900;
-            cursor: pointer;
-            transition: all 0.2s;
-            text-align: center;
-        }
-        .duration-btn:hover { border-color: var(--primary); }
-        .duration-btn.active {
-            background: var(--gradient-main);
-            border-color: transparent;
-            color: #fff;
-            box-shadow: 0 4px 15px var(--glow);
         }
 
         .nav-bar {
@@ -451,7 +556,7 @@
 
         .toast {
             position: fixed; top: 24px; left: 50%; transform: translateX(-50%) translateY(-30px);
-            background: rgba(18, 18, 21, 0.98); color: white; padding: 14px 26px; border-radius: 14px;
+            background: rgba(16, 16, 20, 0.98); color: white; padding: 14px 26px; border-radius: 14px;
             border: 1px solid var(--primary); font-size: 12px; font-weight: 800; z-index: 2000;
             opacity: 0; transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); pointer-events: none;
             box-shadow: 0 15px 35px rgba(0,0,0,0.8);
@@ -474,7 +579,7 @@
         #receipt-modal {
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(9, 9, 11, 0.92);
+            background: rgba(6, 6, 8, 0.92);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             z-index: 99999;
@@ -599,7 +704,13 @@
                 </div>
 
                 <div class="form-group"><label>Email Address</label><input type="email" id="regEmail" placeholder="example@gmail.com"></div>
-                <div class="form-group"><label>Phone Number</label><input type="text" id="regPhone" placeholder="09xxxxxxxx"></div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <div style="position: relative; display: flex; align-items: center;">
+                        <span style="position: absolute; left: 14px; color: var(--primary); font-weight: 900; font-size: 13px; pointer-events: none;">+251</span>
+                        <input type="text" id="regPhone" placeholder="9xxxxxxxx" style="padding-left: 58px;" maxlength="10" oninput="formatPhoneInput(this)">
+                    </div>
+                </div>
                 <div class="form-group"><label>Telegram Username</label><input type="text" id="regTgUser" placeholder="@username"></div>
                 
                 <button class="action-btn" style="width:100%; padding:15px; margin-top:14px;" onclick="handleUserRegistration()">Register & Launch Portal</button>
@@ -771,7 +882,13 @@
                         </select>
                     </div>
                     <div class="form-group"><label>Target Link (Full URL: https://...)</label><input type="url" id="adLink" placeholder="https://t.me/your_channel"></div>
-                    <div class="form-group"><label>Phone Number</label><input type="text" id="adPhone" placeholder="09xxxxxxxx"></div>
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <div style="position: relative; display: flex; align-items: center;">
+                            <span style="position: absolute; left: 14px; color: var(--primary); font-weight: 900; font-size: 13px; pointer-events: none;">+251</span>
+                            <input type="text" id="adPhone" placeholder="9xxxxxxxx" style="padding-left: 58px;" maxlength="10" oninput="formatPhoneInput(this)">
+                        </div>
+                    </div>
                 </div>
 
                 <div id="pricingSectionBox" class="pro-form-box" style="background:rgba(0,0,0,0.4); padding:20px; border-radius:16px; border:1px solid var(--border); margin-bottom: 16px; margin-top: 16px;">
@@ -789,11 +906,11 @@
                     <div id="promoTargetFields" style="display:none;">
                         <div class="form-group">
                             <label>Duration in Days (Min 7 days)</label>
-                            <div class="duration-grid" id="promoDurationGrid">
-                                <button type="button" class="duration-btn active" onclick="selectPromoDays(7, this)">7 Days</button>
-                                <button type="button" class="duration-btn" onclick="selectPromoDays(15, this)">15 Days</button>
-                                <button type="button" class="duration-btn" onclick="selectPromoDays(30, this)">30 Days</button>
-                                <button type="button" class="duration-btn" onclick="selectPromoDays(60, this)">60 Days</button>
+                            <div class="duration-grid" id="promoDurationGrid" style="display:grid; grid-template-columns:repeat(4,1fr); gap:8px;">
+                                <button type="button" class="action-btn secondary" onclick="selectPromoDays(7, this)">7 Days</button>
+                                <button type="button" class="action-btn secondary" onclick="selectPromoDays(15, this)">15 Days</button>
+                                <button type="button" class="action-btn secondary" onclick="selectPromoDays(30, this)">30 Days</button>
+                                <button type="button" class="action-btn secondary" onclick="selectPromoDays(60, this)">60 Days</button>
                             </div>
                             <input type="number" id="adPromoDays" value="7" min="7" style="display:none;" oninput="calcAdPrice()">
                         </div>
@@ -884,23 +1001,21 @@
                     <div class="form-group">
                         <label>Education Level</label>
                         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 6px;" id="jobEduGrid">
-                            <button type="button" class="duration-btn active" onclick="selectJobEdu('Degree', this)">Degree</button>
-                            <button type="button" class="duration-btn" onclick="selectJobEdu('Diploma', this)">Diploma</button>
-                            <button type="button" class="duration-btn" onclick="selectJobEdu('Certificate', this)">Certificate</button>
-                            <button type="button" class="duration-btn" onclick="selectJobEdu('Experience / Freelance', this)">Experience Required</button>
+                            <button type="button" class="action-btn secondary" onclick="selectJobEdu('Degree', this)">Degree</button>
+                            <button type="button" class="action-btn secondary" onclick="selectJobEdu('Diploma', this)">Diploma</button>
+                            <button type="button" class="action-btn secondary" onclick="selectJobEdu('Certificate', this)">Certificate</button>
+                            <button type="button" class="action-btn secondary" onclick="selectJobEdu('Experience / Freelance', this)">Experience Required</button>
                         </div>
                         <input type="hidden" id="jobEduVal" value="Degree">
                     </div>
 
                     <div class="form-group">
-                        <label>Working Condition</label>
+                        <label>Status</label>
                         <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 6px;" id="jobConditionGrid">
-                            <button type="button" class="duration-btn active" onclick="selectJobCondition('Full-time', this)">Full-time</button>
-                            <button type="button" class="duration-btn" onclick="selectJobCondition('Part-time / Shift', this)">Part-time</button>
-                            <button type="button" class="duration-btn" onclick="selectJobCondition('Overtime / Freelance', this)">Freelance</button>
-                            <button type="button" class="duration-btn" onclick="selectJobCondition('Contract', this)">Contract</button>
+                            <!-- Populated dynamically via JS -->
                         </div>
-                        <input type="hidden" id="jobConditionVal" value="Full-time">
+                        <input type="hidden" id="jobConditionVal" value="">
+                        <div id="jobConditionEmptyMsg" style="font-size: 11px; color: var(--text-muted); margin-top: 6px; display: none;">No statuses available from sheet.</div>
                     </div>
 
                     <div style="display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 12px;">
@@ -914,7 +1029,7 @@
                         <label>Phone Number</label>
                         <div style="position: relative; display: flex; align-items: center;">
                             <span style="position: absolute; left: 14px; color: var(--primary); font-weight: 900; font-size: 13px; pointer-events: none;">+251</span>
-                            <input type="text" id="jobPhoneInput" placeholder="9xxxxxxxx" style="padding-left: 58px;" maxlength="10">
+                            <input type="text" id="jobPhoneInput" placeholder="9xxxxxxxx" style="padding-left: 58px;" maxlength="10" oninput="formatPhoneInput(this)">
                         </div>
                     </div>
                 </div>
@@ -1002,11 +1117,13 @@
         const NOTICE_SHEET_URL = "https://docs.google.com/spreadsheets/d/1BZ4K_8kbMDp9_F_8W-j4AsDZsYKTIEODIn1lcxovBTc/export?format=csv&gid=2099439673";
         const EMPLOYEE_SHEET_URL = "https://docs.google.com/spreadsheets/d/1BZ4K_8kbMDp9_F_8W-j4AsDZsYKTIEODIn1lcxovBTc/export?format=csv&gid=1059161044";
         const DAILY_ADS_SHEET_URL = "https://docs.google.com/spreadsheets/d/1BZ4K_8kbMDp9_F_8W-j4AsDZsYKTIEODIn1lcxovBTc/export?format=csv&gid=723212804";
+        const WORKING_CONDITION_SHEET_URL = "https://docs.google.com/spreadsheets/d/1BZ4K_8kbMDp9_F_8W-j4AsDZsYKTIEODIn1lcxovBTc/export?format=csv&gid=378278211";
 
         let cachedTasksData = [];
         let cachedPromosData = [];
         let cachedEmployeesData = [];
         let cachedDailyAdsData = [];
+        let cachedWorkingConditionsData = [];
 
         const boostNetworks = [
             { name: "Telegram", badge: "Telegram Network", icon: '<svg width="20" height="20" viewBox="0 0 24 24" fill="#229ED9"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.02-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.25.38-.51 1.08-.78 4.22-1.84 7.04-3.05 8.46-3.64 4.02-1.68 4.85-1.97 5.39-1.98.12 0 .39.03.56.17.14.12.18.28.2.45-.02.07-.02.13-.04.23z"/></svg>' },
@@ -1028,6 +1145,17 @@
             setInterval(fetchLiveSheetsData, 1500);
             setInterval(rotateClickPayBoostTicker, 3000);
         };
+
+        function formatPhoneInput(input) {
+            let val = input.value.replace(/[^0-9]/g, '');
+            if(val.startsWith('0')) {
+                val = val.substring(1);
+            }
+            if(val.startsWith('251')) {
+                val = val.substring(3);
+            }
+            input.value = val;
+        }
 
         function rotateClickPayBoostTicker() {
             boostIndex = (boostIndex + 1) % boostNetworks.length;
@@ -1086,13 +1214,14 @@
             let age = document.getElementById('regAge').value.trim();
             let gender = document.getElementById('regGender').value.trim();
             let email = document.getElementById('regEmail').value.trim();
-            let phone = document.getElementById('regPhone').value.trim();
+            let phoneRaw = document.getElementById('regPhone').value.trim();
+            let phone = phoneRaw ? '+251' + phoneRaw : '';
             let tgUser = document.getElementById('regTgUser').value.trim();
 
             let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            let phonePattern = /^[0-9]{9,13}$/;
+            let phonePattern = /^[0-9]{9}$/;
 
-            if(!fullName || !bizName || !age || !gender || !email || !phone || !tgUser || !emailPattern.test(email) || !phonePattern.test(phone)) {
+            if(!fullName || !bizName || !age || !gender || !email || !phoneRaw || !tgUser || !emailPattern.test(email) || !phonePattern.test(phoneRaw)) {
                 let ab = document.getElementById('authAlertBox');
                 ab.style.display = 'block';
                 setTimeout(()=> ab.style.display='none', 3500);
@@ -1138,11 +1267,12 @@
             
             document.getElementById('adFullName').value = currentUser.fullName;
             document.getElementById('adBizName').value = currentUser.bizName;
-            document.getElementById('adPhone').value = currentUser.phone;
+            document.getElementById('adPhone').value = currentUser.phone.replace('+251', '');
 
             document.getElementById('jobFullNameInput').value = currentUser.fullName;
             document.getElementById('jobBizNameInput').value = currentUser.bizName;
-            document.getElementById('jobPhoneInput').value = currentUser.phone.replace(/^(\+251|0)/, '');
+            let rawPhone = currentUser.phone.replace(/^(\+251|0)/, '');
+            document.getElementById('jobPhoneInput').value = rawPhone;
 
             fetchLiveSheetsData();
             updateDashboardMetrics();
@@ -1263,6 +1393,44 @@
                     renderDailyAdsUI();
                 }
             });
+
+            loadGoogleSheetCSV(WORKING_CONDITION_SHEET_URL, (data) => {
+                if(data && data.length > 0) {
+                    let conditions = data.map(row => row.status || row.workingcondition || row.condition || row.name || Object.values(row)[0]).filter(Boolean);
+                    cachedWorkingConditionsData = conditions;
+                    renderWorkingConditionButtons();
+                } else {
+                    cachedWorkingConditionsData = [];
+                    renderWorkingConditionButtons();
+                }
+            });
+        }
+
+        function renderWorkingConditionButtons() {
+            let grid = document.getElementById('jobConditionGrid');
+            let emptyMsg = document.getElementById('jobConditionEmptyMsg');
+            if(!grid) return;
+            
+            grid.innerHTML = '';
+            let currentVal = document.getElementById('jobConditionVal').value;
+
+            if(cachedWorkingConditionsData.length === 0) {
+                if(emptyMsg) emptyMsg.style.display = 'block';
+                document.getElementById('jobConditionVal').value = '';
+                return;
+            } else {
+                if(emptyMsg) emptyMsg.style.display = 'none';
+            }
+
+            cachedWorkingConditionsData.forEach((cond, idx) => {
+                let isSelected = (idx === 0 && !currentVal) || currentVal === cond;
+                if(isSelected && !currentVal) {
+                    document.getElementById('jobConditionVal').value = cond;
+                }
+                grid.innerHTML += `
+                    <button type="button" class="action-btn ${isSelected ? '' : 'secondary'}" onclick="selectJobCondition('${cond}', this)">${cond}</button>
+                `;
+            });
         }
 
         function switchBizTab(tab) {
@@ -1321,7 +1489,7 @@
                 }
 
                 el.innerHTML += `
-                    <div class="card" style="background: linear-gradient(135deg, rgba(18,18,21,0.95), rgba(24,24,27,0.95)); border: 1px solid var(--border);">
+                    <div class="card" style="background: linear-gradient(135deg, rgba(16,16,20,0.95), rgba(22,22,26,0.95)); border: 1px solid var(--border);">
                         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
                             <span style="font-size: 10px; background: rgba(245, 158, 11, 0.15); color: var(--primary); padding: 4px 10px; border-radius: 8px; font-weight: 900; letter-spacing: 0.5px;">📢 DAILY ANNOUNCEMENT</span>
                         </div>
@@ -1388,22 +1556,77 @@
                 return;
             }
             reversed.forEach((emp) => {
-                let name = emp.name || emp.fullname || "Verified Talent";
-                let role = emp.role || emp.position || "Professional Specialist";
-                let phone = emp.phone || emp.contact || "N/A";
-                let skills = emp.skills || emp.experience || "Verified Skills";
+                let title = emp.title || emp.position || emp.name || "Verified Professional Talent";
+                let desc = emp.description || emp.desc || emp.skills || "";
+                
+                let rawPhone = (emp.phoneno || emp.phone || emp.contact || "").replace(/^(\+251|0)/, '');
+                let fullPhone = rawPhone ? "+251 " + rawPhone : "N/A";
+                let tgUser = emp.telegram || emp.tg || emp.tguser || "";
+                let portfolioLink = emp.portfolio || emp.link || emp.website || "#";
+                let salary = emp.salary || emp.pay || "Negotiable";
+                let workCondition = emp.status || emp['working condtion'] || emp.workingcondtion || emp.condition || emp.workcondition || emp.type || "Full-time / Contract";
+                let address = emp.addries || emp.address || emp.location || "Addis Ababa, Ethiopia";
+                let eduLevel = emp['education level'] || emp.educationlevl || emp.education || emp.edu || "Degree / Professional Certificate";
+                let rawExp = emp.experience || emp.exp || emp.years || emp.workexperience || "";
+                let experienceStr = rawExp ? `${rawExp} Years` : "Experienced";
+
+                let cleanTg = tgUser.replace('@','').trim();
+
                 el.innerHTML += `
-                    <div class="card">
-                        <div style="font-size:13px; font-weight:900; color:#fff; margin-bottom:4px;">👨‍💼 ${name}</div>
-                        <div style="font-size:11px; color:var(--primary); font-weight:800; margin-bottom:8px;">${role}</div>
-                        <div style="font-size:10px; color:var(--text-muted); margin-bottom:10px; line-height:1.5;">
-                            <b>Skills/Experience:</b> ${skills}<br>
-                            <b>Contact:</b> ${phone}
+                    <div class="talent-card">
+                        <div class="talent-header">
+                            <div class="talent-title">👑 ${title}</div>
+                            <span class="talent-badge">Verified Talent</span>
                         </div>
-                        <a href="tel:${phone}" class="action-btn secondary" style="display:block; text-align:center; text-decoration:none; padding:8px;">📞 Contact Talent</a>
+                        
+                        <div class="talent-desc-box">
+                            <div style="font-size: 8px; color: var(--text-muted); font-weight: 800; text-transform: uppercase; margin-bottom: 4px; letter-spacing: 0.5px;">Description & Expertise</div>
+                            <div class="talent-desc-text">${desc}</div>
+                        </div>
+
+                        <div class="talent-phone-row">
+                            <div>
+                                <div style="font-size: 8px; color: var(--text-muted); font-weight: 800; text-transform: uppercase;">Phone Number</div>
+                                <div style="font-size: 13px; font-weight: 900; color: #fff; margin-top: 2px; letter-spacing: 0.5px;">${fullPhone}</div>
+                            </div>
+                            <button type="button" class="talent-btn secondary-btn" style="padding: 7px 12px; font-size: 10px;" onclick="copyTalentPhone('${fullPhone}')">📋 Copy Phone</button>
+                        </div>
+
+                        <div class="talent-meta-grid">
+                            <div class="talent-meta-item">
+                                <span class="talent-meta-label">Experience</span>
+                                <span class="talent-meta-val" style="color: var(--primary);">⏳ ${experienceStr}</span>
+                            </div>
+                            <div class="talent-meta-item">
+                                <span class="talent-meta-label">Salary Offer</span>
+                                <span class="talent-meta-val" style="color: #6ee7b7;">💰 ${salary}</span>
+                            </div>
+                            <div class="talent-meta-item">
+                                <span class="talent-meta-label">Status</span>
+                                <span class="talent-meta-val" style="color: var(--primary);">⚙️ ${workCondition}</span>
+                            </div>
+                            <div class="talent-meta-item">
+                                <span class="talent-meta-label">Address</span>
+                                <span class="talent-meta-val">📍 ${address}</span>
+                            </div>
+                            <div class="talent-meta-item" style="grid-column: span 2;">
+                                <span class="talent-meta-label">Education Level</span>
+                                <span class="talent-meta-val" style="color: var(--accent);">🎓 ${eduLevel}</span>
+                            </div>
+                        </div>
+
+                        <div class="talent-actions-row">
+                            ${cleanTg ? `<a href="https://t.me/${cleanTg}" target="_blank" class="talent-btn" style="background: #229ED9;"><span>💬 Telegram Contact</span></a>` : `<button type="button" class="talent-btn secondary-btn" disabled style="opacity:0.5; cursor:not-allowed;"><span>💬 No Telegram</span></button>`}
+                            ${portfolioLink && portfolioLink !== '#' ? `<a href="${portfolioLink}" target="_blank" class="talent-btn secondary-btn"><span>🌐 Portfolio Link</span></a>` : `<button type="button" class="talent-btn secondary-btn" disabled style="opacity:0.5; cursor:not-allowed;"><span>🌐 No Portfolio</span></button>`}
+                        </div>
                     </div>
                 `;
             });
+        }
+
+        function copyTalentPhone(phone) {
+            navigator.clipboard.writeText(phone);
+            showToast("📋 Talent Phone Number copied: " + phone);
         }
 
         function switchTab(sectionId) {
@@ -1463,8 +1686,10 @@
         }
 
         function selectPromoDays(days, btn) {
-            document.querySelectorAll('#promoDurationGrid .duration-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+            document.querySelectorAll('#promoDurationGrid .action-btn').forEach(b => {
+                b.className = 'action-btn secondary';
+            });
+            btn.className = 'action-btn';
             document.getElementById('adPromoDays').value = days;
             calcAdPrice();
         }
@@ -1621,23 +1846,27 @@
         }
 
         function selectJobEdu(val, btn) {
-            document.querySelectorAll('#jobEduGrid .duration-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+            document.querySelectorAll('#jobEduGrid .action-btn').forEach(b => {
+                b.className = 'action-btn secondary';
+            });
+            btn.className = 'action-btn';
             document.getElementById('jobEduVal').value = val;
         }
 
         function selectJobCondition(val, btn) {
-            document.querySelectorAll('#jobConditionGrid .duration-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+            document.querySelectorAll('#jobConditionGrid .action-btn').forEach(b => {
+                b.className = 'action-btn secondary';
+            });
+            btn.className = 'action-btn';
             document.getElementById('jobConditionVal').value = val;
         }
 
         function handleJobProceedAction() {
             let title = document.getElementById('jobTitleInput').value.trim();
             let desc = document.getElementById('jobDescInput').value.trim();
-            let phone = document.getElementById('jobPhoneInput').value.trim();
+            let phoneInput = document.getElementById('jobPhoneInput').value.trim();
 
-            if(!title || !desc || !phone) {
+            if(!title || !desc || !phoneInput) {
                 let err = document.getElementById('jobError');
                 err.style.display = 'block';
                 setTimeout(() => err.style.display = 'none', 3000);
@@ -1710,7 +1939,7 @@
                 desc: desc,
                 category: 'job',
                 jobType: jobType,
-                targetInfo: `Edu: ${edu} | Mode: ${condition} | Salary: ${salary}`,
+                targetInfo: `Edu: ${edu} | Status: ${condition} | Salary: ${salary}`,
                 totalCost: cost,
                 trx: trx,
                 date: new Date().toLocaleString()
@@ -1724,7 +1953,7 @@
                       `📌 Title: ${title}\n` +
                       `📝 Description: ${desc}\n` +
                       `🎓 Education: ${edu}\n` +
-                      `⚙️ Working Condition: ${condition}\n` +
+                      `⚙️ Status: ${condition}\n` +
                       `💵 Salary Offer: ${salary}\n` +
                       `🏷️ Posting Type: ${jobType}\n` +
                       `💰 Paid Amount: ${cost}\n` +
