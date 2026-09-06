@@ -671,7 +671,7 @@
                 
                 <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
                     <a href="https://t.me/Click_Pay_Pro?direct" target="_blank" class="action-btn secondary" onclick="markJoined()">📢 Official Channel (Join)</a>
-                    <button class="action-btn" style="width:100%; padding:15px;" onclick="proceedAfterGateway()">✅ Proceed to Business Registration</button>
+                    <button type="button" class="action-btn" style="width:100%; padding:15px;" onclick="proceedAfterGateway()">✅ Proceed to Business Registration</button>
                 </div>
                 <div id="gateAlert" class="inline-alert">⚠️ Please join the official Business Channel first!</div>
 
@@ -713,7 +713,7 @@
                 </div>
                 <div class="form-group"><label>Telegram Username</label><input type="text" id="regTgUser" placeholder="@username"></div>
                 
-                <button class="action-btn" style="width:100%; padding:15px; margin-top:14px;" onclick="handleUserRegistration()">Register & Launch Portal</button>
+                <button type="button" class="action-btn" style="width:100%; padding:15px; margin-top:14px;" onclick="handleUserRegistration()">Register & Launch Portal</button>
                 <div id="authAlertBox" class="inline-alert">Please fill in ALL required fields correctly (Valid Email & Phone) before proceeding!</div>
             </div>
             <div class="footer-copyright">
@@ -762,10 +762,10 @@
             </div>
 
             <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin: 16px 0; background: rgba(0,0,0,0.4); border-radius: 16px; padding: 6px; border: 1px solid var(--border);">
-              <button onclick="switchBizTab('dailyads')" id="biz-dailyads-tab-btn" style="padding: 10px 4px; border: none; background: var(--primary); color: #fff; border-radius: 12px; font-weight: 900; font-size: 11px; cursor: pointer; transition: all 0.2s;">📢 Daily Ads</button>
-              <button onclick="switchBizTab('tasks')" id="biz-tasks-tab-btn" style="padding: 10px 4px; border: none; background: transparent; color: var(--text-light); border-radius: 12px; font-weight: 900; font-size: 11px; cursor: pointer; transition: all 0.2s;">📋 Tasks</button>
-              <button onclick="switchBizTab('promos')" id="biz-promos-tab-btn" style="padding: 10px 4px; border: none; background: transparent; color: var(--text-light); border-radius: 12px; font-weight: 900; font-size: 11px; cursor: pointer; transition: all 0.2s;">🌟 Promos</button>
-              <button onclick="switchBizTab('employees')" id="biz-employees-tab-btn" style="padding: 10px 4px; border: none; background: transparent; color: var(--text-light); border-radius: 12px; font-weight: 900; font-size: 11px; cursor: pointer; transition: all 0.2s;">👨‍💼 Talents</button>
+              <button type="button" onclick="switchBizTab('dailyads')" id="biz-dailyads-tab-btn" style="padding: 10px 4px; border: none; background: var(--primary); color: #fff; border-radius: 12px; font-weight: 900; font-size: 11px; cursor: pointer; transition: all 0.2s;">📢 Daily Ads</button>
+              <button type="button" onclick="switchBizTab('tasks')" id="biz-tasks-tab-btn" style="padding: 10px 4px; border: none; background: transparent; color: var(--text-light); border-radius: 12px; font-weight: 900; font-size: 11px; cursor: pointer; transition: all 0.2s;">📋 Tasks</button>
+              <button type="button" onclick="switchBizTab('promos')" id="biz-promos-tab-btn" style="padding: 10px 4px; border: none; background: transparent; color: var(--text-light); border-radius: 12px; font-weight: 900; font-size: 11px; cursor: pointer; transition: all 0.2s;">🌟 Promos</button>
+              <button type="button" onclick="switchBizTab('employees')" id="biz-employees-tab-btn" style="padding: 10px 4px; border: none; background: transparent; color: var(--text-light); border-radius: 12px; font-weight: 900; font-size: 11px; cursor: pointer; transition: all 0.2s;">👨‍💼 Talents</button>
             </div>
 
             <div id="biz-dailyads-wrap">
@@ -905,14 +905,8 @@
 
                     <div id="promoTargetFields" style="display:none;">
                         <div class="form-group">
-                            <label>Duration in Days (Min 7 days)</label>
-                            <div class="duration-grid" id="promoDurationGrid" style="display:grid; grid-template-columns:repeat(4,1fr); gap:8px;">
-                                <button type="button" class="action-btn secondary" onclick="selectPromoDays(7, this)">7 Days</button>
-                                <button type="button" class="action-btn secondary" onclick="selectPromoDays(15, this)">15 Days</button>
-                                <button type="button" class="action-btn secondary" onclick="selectPromoDays(30, this)">30 Days</button>
-                                <button type="button" class="action-btn secondary" onclick="selectPromoDays(60, this)">60 Days</button>
-                            </div>
-                            <input type="number" id="adPromoDays" value="7" min="7" style="display:none;" oninput="calcAdPrice()">
+                            <label>Duration in Days (Enter manually)</label>
+                            <input type="number" id="adPromoDays" value="7" min="1" oninput="calcAdPrice()" style="width:100%;">
                         </div>
                     </div>
 
@@ -927,7 +921,7 @@
                     </div>
                 </div>
 
-                <button class="action-btn" style="width:100%; padding:16px; font-size:13px;" onclick="showAdPaymentArea()">Confirm Payment & Proceed</button>
+                <button type="button" class="action-btn" style="width:100%; padding:16px; font-size:13px;" onclick="showAdPaymentArea()">Confirm Payment & Proceed</button>
 
                 <div id="adPaymentArea" style="display:none; margin-top:20px; border-top:1px solid var(--border); padding-top:20px;">
                     <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 14px;">
@@ -956,7 +950,7 @@
                     </div>
                     
                     <div class="form-group"><label>Transaction ID / TRX Reference</label><input type="text" id="adTxId" placeholder="TRX..."></div>
-                    <button class="action-btn" style="width:100%; background: var(--accent); padding: 15px;" onclick="submitAdFinal()">Post Ad (Submit)</button>
+                    <button type="button" class="action-btn" style="width:100%; background: var(--accent); padding: 15px;" onclick="submitAdFinal()">Post Ad (Submit)</button>
                     <div id="adSuccess" class="inline-success">Campaign submitted successfully! Approval buttons sent to company.</div>
                     <div id="adError" class="inline-alert">Please enter a valid Transaction ID (TRX ID)!</div>
                 </div>
@@ -1063,10 +1057,10 @@
                     </div>
 
                     <div class="form-group" style="margin-bottom: 12px;"><label>Transaction ID / TRX Reference</label><input type="text" id="jobTxIdInput" placeholder="TRX..."></div>
-                    <button class="action-btn" style="width:100%; background: var(--accent); padding: 15px;" onclick="submitJobVacancyFinal()">Send Payment & Post Job</button>
+                    <button type="button" class="action-btn" style="width:100%; background: var(--accent); padding: 15px;" onclick="submitJobVacancyFinal()">Send Payment & Post Job</button>
                 </div>
 
-                <button id="jobActionMainBtn" class="action-btn" style="width:100%; padding:16px; font-size:13px; margin-top: 16px;" onclick="handleJobProceedAction()">Proceed to Post Job</button>
+                <button type="button" id="jobActionMainBtn" class="action-btn" style="width:100%; padding:16px; font-size:13px; margin-top: 16px;" onclick="handleJobProceedAction()">Proceed to Post Job</button>
                 
                 <div id="jobSuccess" class="inline-success">Job vacancy posted successfully and sent to company!</div>
                 <div id="jobError" class="inline-alert">Please fill in ALL required job vacancy fields correctly!</div>
@@ -1079,19 +1073,19 @@
     </div>
 
     <nav class="nav-bar" id="mainNavBar" style="display:none;">
-        <button class="nav-item active" id="navHome" onclick="switchTab('business-dashboard')">
+        <button type="button" class="nav-item active" id="navHome" onclick="switchTab('business-dashboard')">
             <span>👑</span><span>Home</span>
         </button>
-        <button class="nav-item" id="navSubmitAd" onclick="switchTab('ad-submit-section')">
+        <button type="button" class="nav-item" id="navSubmitAd" onclick="switchTab('ad-submit-section')">
             <span>📢</span><span>Post Ad</span>
         </button>
-        <button class="nav-item" id="navJobVacancy" onclick="switchTab('job-vacancy-section')">
+        <button type="button" class="nav-item" id="navJobVacancy" onclick="switchTab('job-vacancy-section')">
             <span>💼</span><span>Job Vacancy</span>
         </button>
-        <button class="nav-item" id="navMyAdsBiz" onclick="switchTab('business-my-ads-section'); renderMyAdsUI();">
+        <button type="button" class="nav-item" id="navMyAdsBiz" onclick="switchTab('business-my-ads-section'); renderMyAdsUI();">
             <span>📁</span><span>My Ads</span>
         </button>
-        <button class="nav-item" id="navProfileBiz" onclick="switchTab('business-profile-section'); renderBusinessProfileUI();">
+        <button type="button" class="nav-item" id="navProfileBiz" onclick="switchTab('business-profile-section'); renderBusinessProfileUI();">
             <span>👤</span><span>Profile</span>
         </button>
     </nav>
@@ -1685,15 +1679,6 @@
             calcAdPrice();
         }
 
-        function selectPromoDays(days, btn) {
-            document.querySelectorAll('#promoDurationGrid .action-btn').forEach(b => {
-                b.className = 'action-btn secondary';
-            });
-            btn.className = 'action-btn';
-            document.getElementById('adPromoDays').value = days;
-            calcAdPrice();
-        }
-
         function checkWordCount(el) {
             let words = el.value.trim().split(/\s+/).filter(w => w.length > 0);
             if(words.length > 25) {
@@ -1717,10 +1702,10 @@
             if(campaignCategory === 'task') {
                 let mode = document.getElementById('adTaskMode').value;
                 let amount = parseInt(document.getElementById('adTargetAmount').value) || 0;
-                total = mode === 'people' ? amount * 3 : amount * 50;
+                total = mode === 'people' ? amount * 3 : amount * 5000;
             } else {
-                let days = parseInt(document.getElementById('adPromoDays').value) || 7;
-                total = days * 40;
+                let days = parseInt(document.getElementById('adPromoDays').value) || 1;
+                total = days * 2000;
             }
             document.getElementById('adTotalCost').innerText = `${total} ETB`;
         }
