@@ -670,7 +670,7 @@
                 </div>
                 
                 <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
-                    <a href="https://t.me/Click_Pay_Pro?direct" target="_blank" class="action-btn secondary" onclick="markJoined()">📢 Official Channel (Join)</a>
+                    <a href="https://t.me/Click_Pay_Pro" target="_blank" class="action-btn secondary" onclick="markJoined()">📢 Official Channel (Join)</a>
                     <button type="button" class="action-btn" style="width:100%; padding:15px;" onclick="proceedAfterGateway()">✅ Proceed to Business Registration</button>
                 </div>
                 <div id="gateAlert" class="inline-alert">⚠️ Please join the official Business Channel first!</div>
@@ -708,7 +708,7 @@
                     <label>Phone Number</label>
                     <div style="position: relative; display: flex; align-items: center;">
                         <span style="position: absolute; left: 14px; color: var(--primary); font-weight: 900; font-size: 13px; pointer-events: none;">+251</span>
-                        <input type="text" id="regPhone" placeholder="9xxxxxxxx" style="padding-left: 58px;" maxlength="10" oninput="formatPhoneInput(this)">
+                        <input type="text" id="regPhone" placeholder="9xxxxxxxx" style="padding-left: 58px;" maxlength="9" oninput="formatPhoneInput(this)">
                     </div>
                 </div>
                 <div class="form-group"><label>Telegram Username</label><input type="text" id="regTgUser" placeholder="@username"></div>
@@ -827,8 +827,8 @@
                 <div style="border-top: 1px solid var(--border); padding-top: 16px; display: flex; flex-direction: column; gap: 10px;">
                     <div style="font-size: 11px; font-weight: 900; color: var(--primary); text-transform: uppercase; margin-bottom: 4px; text-align: center;">Official Channels & Support</div>
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                        <a href="https://t.me/Click_Pay_Pro?direct" target="_blank" class="action-btn" style="text-align: center; text-decoration: none; padding: 12px; font-size: 11px;">📢 Official Channel</a>
-                        <a href="https://t.me/Click_Pay_Pro?direct" target="_blank" class="action-btn secondary" style="text-align: center; text-decoration: none; padding: 12px; font-size: 11px;">💬 Support</a>
+                        <a href="https://t.me/Click_Pay_Pro" target="_blank" class="action-btn" style="text-align: center; text-decoration: none; padding: 12px; font-size: 11px;">📢 Official Channel</a>
+                        <a href="https://t.me/yourcod_botbot" target="_blank" class="action-btn secondary" style="text-align: center; text-decoration: none; padding: 12px; font-size: 11px;">💬 Support</a>
                     </div>
                 </div>
             </div>
@@ -866,9 +866,8 @@
                     <div class="form-group"><label>Business / Brand Name</label><input type="text" id="adBizName"></div>
                     <div class="form-group"><label>Headline / Professional Title (Bold)</label><input type="text" id="adHeadline" placeholder="Campaign title..."></div>
                     <div class="form-group">
-                        <label>Description / Details (Max 25 Words)</label>
-                        <textarea id="adDesc" rows="3" placeholder="Detailed description of services or tasks (Max 25 words)..." oninput="checkWordCount(this)"></textarea>
-                        <div style="font-size:9px; color:var(--text-muted); text-align:right; margin-top:4px;" id="wordCountIndicator">0 / 25 words</div>
+                        <label>Description / Details</label>
+                        <textarea id="adDesc" rows="3" placeholder="Detailed description of services or tasks..."></textarea>
                     </div>
                     
                     <div class="form-group">
@@ -886,7 +885,7 @@
                         <label>Phone Number</label>
                         <div style="position: relative; display: flex; align-items: center;">
                             <span style="position: absolute; left: 14px; color: var(--primary); font-weight: 900; font-size: 13px; pointer-events: none;">+251</span>
-                            <input type="text" id="adPhone" placeholder="9xxxxxxxx" style="padding-left: 58px;" maxlength="10" oninput="formatPhoneInput(this)">
+                            <input type="text" id="adPhone" placeholder="9xxxxxxxx" style="padding-left: 58px;" maxlength="9" oninput="formatPhoneInput(this)">
                         </div>
                     </div>
                 </div>
@@ -970,9 +969,8 @@
                     <div class="form-group"><label>Job Position / Title</label><input type="text" id="jobTitleInput" placeholder="e.g. Senior Graphic Designer"></div>
                     
                     <div class="form-group">
-                        <label>Job Description & Requirements (Max 25 Words)</label>
-                        <textarea id="jobDescInput" rows="3" placeholder="Job description and requirements (Max 25 words)..." oninput="checkJobWordCount(this)"></textarea>
-                        <div style="font-size:9px; color:var(--text-muted); text-align:right; margin-top:4px;" id="jobWordCountIndicator">0 / 25 words</div>
+                        <label>Job Description & Requirements</label>
+                        <textarea id="jobDescInput" rows="3" placeholder="Job description and requirements (No word limit)..."></textarea>
                     </div>
 
                     <div class="form-group">
@@ -1035,7 +1033,7 @@
                         <label>Phone Number</label>
                         <div style="position: relative; display: flex; align-items: center;">
                             <span style="position: absolute; left: 14px; color: var(--primary); font-weight: 900; font-size: 13px; pointer-events: none;">+251</span>
-                            <input type="text" id="jobPhoneInput" placeholder="9xxxxxxxx" style="padding-left: 58px;" maxlength="10" oninput="formatPhoneInput(this)">
+                            <input type="text" id="jobPhoneInput" placeholder="9xxxxxxxx" style="padding-left: 58px;" maxlength="9" oninput="formatPhoneInput(this)">
                         </div>
                     </div>
                 </div>
@@ -1651,24 +1649,6 @@
                 label.innerText = 'Days Count';
             }
             calcAdPrice();
-        }
-
-        function checkWordCount(el) {
-            let words = el.value.trim().split(/\s+/).filter(w => w.length > 0);
-            if(words.length > 25) {
-                el.value = words.slice(0, 25).join(' ');
-                words = el.value.split(/\s+/);
-            }
-            document.getElementById('wordCountIndicator').innerText = `${words.length} / 25 words`;
-        }
-
-        function checkJobWordCount(el) {
-            let words = el.value.trim().split(/\s+/).filter(w => w.length > 0);
-            if(words.length > 25) {
-                el.value = words.slice(0, 25).join(' ');
-                words = el.value.split(/\s+/);
-            }
-            document.getElementById('jobWordCountIndicator').innerText = `${words.length} / 25 words`;
         }
 
         function calcAdPrice() {
