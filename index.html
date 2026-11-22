@@ -607,6 +607,76 @@
             top: 0; left: 0; width: 100%; height: 6px;
             background: var(--gradient-main);
         }
+    
+
+        /* Responsive presentation layer: keeps all existing HTML, data and JavaScript intact. */
+        html { -webkit-text-size-adjust: 100%; }
+        body { min-width: 320px; }
+        .container { width: min(100% - 28px, 1180px); max-width: 1180px; }
+        header { padding-left: clamp(14px, 3vw, 32px); padding-right: clamp(14px, 3vw, 32px); }
+        img, video, iframe { max-width: 100%; }
+        input, select, textarea, button { max-width: 100%; }
+        .box, .card, .talent-card { min-width: 0; }
+        .nav-bar {
+            flex-direction: row !important;
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 8px;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scrollbar-width: thin;
+            padding: 9px max(8px, env(safe-area-inset-right)) calc(9px + env(safe-area-inset-bottom)) max(8px, env(safe-area-inset-left));
+        }
+        .nav-item {
+            flex: 0 1 150px;
+            min-width: max-content;
+            flex-direction: row !important;
+            justify-content: center;
+            gap: 7px;
+            padding: 10px 14px;
+            white-space: nowrap;
+            font-size: 11px;
+        }
+        .nav-item span:first-child { font-size: 18px; }
+        .live-stats-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        .talent-meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        button.action-btn, button.talent-btn { white-space: normal; }
+        @media (min-width: 900px) {
+            .container { margin: 28px auto; }
+            .section-title { font-size: 16px; }
+            .card, .box, .talent-card { padding: 24px; }
+            .live-stats-grid { gap: 14px; }
+            .stat-metric-card { padding: 18px 10px; }
+            .stat-metric-num { font-size: 19px; }
+            .stat-metric-label { font-size: 9px; }
+            .nav-bar { top: 0; bottom: auto; border-top: 0; border-bottom: 1px solid var(--border); box-shadow: 0 10px 30px rgba(0,0,0,.45); }
+            body { padding-top: 58px; padding-bottom: 24px; }
+        }
+        @media (max-width: 640px) {
+            body { padding-bottom: 86px; }
+            .container { width: calc(100% - 20px); padding: 0 2px; margin: 12px auto; }
+            header { padding: 12px 14px; }
+            header h1 { font-size: 12px; }
+            .card, .box, .talent-card { border-radius: 15px; padding: 15px; }
+            .gateway-chooser { padding: 24px 14px; }
+            .live-stats-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+            .talent-meta-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .talent-actions-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .nav-bar { justify-content: flex-start; gap: 5px; }
+            .nav-item { flex: 0 0 auto; padding: 9px 11px; font-size: 10px; }
+            .nav-item span:first-child { font-size: 17px; }
+            input, select, textarea { font-size: 16px; }
+            .clickpay-boost-ticker { gap: 8px; padding: 10px; }
+            .ticker-name { font-size: 10px; }
+            .ticker-watermark { font-size: 8px; }
+        }
+        @media (max-width: 380px) {
+            .talent-actions-row { grid-template-columns: 1fr; }
+            .talent-meta-grid { grid-template-columns: 1fr 1fr; }
+            .nav-item { padding: 8px 9px; font-size: 9px; }
+            .action-btn { padding: 11px 12px; font-size: 11px; }
+        }
+
     </style>
 </head>
 <body class="business-theme">
